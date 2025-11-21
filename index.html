@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과제전</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+</head>
+<body>
+    <div id="background-canvas"></div>
+    <div class="logo-background"></div>
+    <div class="container">
+        <!-- Project Cards -->
+        <div class="project-cards">
+            <div class="card orange-card card-1">Show All</div>
+            <div class="card-group card-2-group">
+                <div class="card purple-card card-2-line1">Mapping</div>
+                <div class="card purple-card card-2-line2">Your Time</div>
+            </div>
+            <div class="card-group card-3-group">
+                <div class="card pink-card card-3-line1">Collected</div>
+                <div class="card pink-card card-3-line2">Book</div>
+            </div>
+            <div class="card purple-card card-5">Shape Poster</div>
+            <div class="card-group card-6-group">
+                <div class="card orange-card card-6-line1">Generative</div>
+                <div class="card orange-card card-6-line2">System</div>
+            </div>
+            <div class="card-group card-8-group">
+                <div class="card pink-card card-8-line1">Self-</div>
+                <div class="card pink-card card-8-line2">Identity</div>
+            </div>
+        </div>
+
+        <!-- Characters Grid -->
+        <div class="characters-container">
+            <!-- Row 1 - Top Row (11 characters) -->
+            <div class="characters-row row-1">
+                <div class="character char-1">
+                    <div class="character-label">
+                        <div class="arrow"></div>
+                        <div class="name">강민석</div>
+                    </div>
+                    <div class="eyes">
+                        <div class="eye left-eye"><div class="pupil"></div></div>
+                        <div class="eye right-eye"><div class="pupil"></div></div>
+                    </div>
+                </div>
+                <div class="character char-2">
+                    <div class="character-label">
+                        <div class="arrow"></div>
+                        <div class="name">권민서</div>
+                    </div>
+                    <div class="eyes">
+                        <div class="eye left-eye"><div class="pupil"></div></div>
+                        <div class="eye right-eye"><div class="pupil"></div></div>
+                    </div>
+                </div>
+                <div class="character char-3">
+                    <div class="character-label">
+                        <div class="arrow"></div>
+                        <div class="name">노희지</div>
+                    </div>
+                    <div class="eyes">
+                        <div class="eye left-eye"><div class="pupil"></div></div>
+                        <div class="eye right-eye"><div class="pupil"></div></div>
+                    </div>
+                </div>
+                <div class="character char-4">
+                    <div class="character-label">
+                        <div class="arrow"></div>
+                        <div class="name">류시완</div>
+                    </div>
+                    <div class="eyes">
+                        <div class="eye left-eye"><div class="pupil"></div></div>
+                        <div class="eye right-eye"><div class="pupil"></div></div>
+                    </div>
+                </div>
+                <div class="character char-5">
+                    <div class="character-label">
+                        <div class="arrow"></div>
+                        <div class="name">박성수</div>
+                    </div>
+                    <div class="eyes">
+                        <div class="eye left-eye"><div class="pupil"></div></div>
+                        <div class="eye right-eye"><div class="pupil"></div></div>
+                    </div>
+                </div>
+                <div class="character char-6">
+                    <div class="character-label">
+                        <div class="arrow"></div>
+                        <div class="name">박지우</div>
+                    </div>
+                    <div class="eyes">
+                        <div class="eye left-eye"><div class="pupil"></div></div>
+                        <div class="eye right-eye"><div class="pupil"></div></div>
+                    </div>
+                </div>
+                <div class="character char-7">
+                    <div class="character-label">
+                        <div class="arrow"></div>
+                        <div class="name">박지혜</div>
+                    </div>
+                    <div class="eyes">
+                        <div class="eye left-eye"><div class="pupil"></div></div>
+                        <div class="eye right-eye"><div class="pupil"></div></div>
+                    </div>
+                </div>
+                <div class="character char-8">
+                    <div class="character-label">
+                        <div class="arrow"></div>
+                        <div class="name">서정민</div>
+                    </div>
+                    <div class="eyes">
+                        <div class="eye left-eye"><div class="pupil"></div></div>
+                        <div class="eye right-eye"><div class="pupil"></div></div>
+                    </div>
+                </div>
+                <div class="character char-9">
+                    <div class="character-label">
+                        <div class="arrow"></div>
+                        <div class="name">신기준</div>
+                    </div>
+                    <div class="eyes">
+                        <div class="eye left-eye"><div class="pupil"></div></div>
+                        <div class="eye right-eye"><div class="pupil"></div></div>
+                    </div>
+                </div>
+                <div class="character char-10">
+                    <div class="character-label">
+                        <div class="arrow"></div>
+                        <div class="name">양지은</div>
+                    </div>
+                    <div class="eyes">
+                        <div class="eye left-eye"><div class="pupil"></div></div>
+                        <div class="eye right-eye"><div class="pupil"></div></div>
+                    </div>
+                </div>
+                <div class="character char-11">
+                    <div class="character-label">
+                        <div class="arrow"></div>
+                        <div class="name">유성현</div>
+                    </div>
+                    <div class="eyes">
+                        <div class="eye left-eye"><div class="pupil"></div></div>
+                        <div class="eye right-eye"><div class="pupil"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2 - Bottom Row (12 characters) -->
+            <div class="characters-row row-2">
+                <div class="character char-12">
+                    <div class="character-label">
+                        <div class="arrow"></div>
+                        <div class="name">윤다경</div>
+                    </div>
+                    <div class="eyes">
+                        <div class="eye left-eye"><div class="pupil"></div></div>
+                        <div class="eye right-eye"><div class="pupil"></div></div>
+                    </div>
+                </div>
+                <div class="character char-13">
+                    <div class="character-label">
+                        <div class="arrow"></div>
+                        <div class="name">윤자영</div>
+                    </div>
+                    <div class="eyes">
+                        <div class="eye left-eye"><div class="pupil"></div></div>
+                        <div class="eye right-eye"><div class="pupil"></div></div>
+                    </div>
+                </div>
+                <div class="character char-14">
+                    <div class="character-label">
+                        <div class="arrow"></div>
+                        <div class="name">이정은</div>
+                    </div>
+                    <div class="eyes">
+                        <div class="eye left-eye"><div class="pupil"></div></div>
+                        <div class="eye right-eye"><div class="pupil"></div></div>
+                    </div>
+                </div>
+                <div class="character char-15">
+                    <div class="character-label">
+                        <div class="arrow"></div>
+                        <div class="name">이소민</div>
+                    </div>
+                    <div class="eyes">
+                        <div class="eye left-eye"><div class="pupil"></div></div>
+                        <div class="eye right-eye"><div class="pupil"></div></div>
+                    </div>
+                </div>
+                <div class="character char-16">
+                    <div class="character-label">
+                        <div class="arrow"></div>
+                        <div class="name">이시네</div>
+                    </div>
+                    <div class="eyes">
+                        <div class="eye left-eye"><div class="pupil"></div></div>
+                        <div class="eye right-eye"><div class="pupil"></div></div>
+                    </div>
+                </div>
+                <div class="character char-17">
+                    <div class="character-label">
+                        <div class="arrow"></div>
+                        <div class="name">이한나</div>
+                    </div>
+                    <div class="eyes">
+                        <div class="eye left-eye"><div class="pupil"></div></div>
+                        <div class="eye right-eye"><div class="pupil"></div></div>
+                    </div>
+                </div>
+                <div class="character char-18">
+                    <div class="character-label">
+                        <div class="arrow"></div>
+                        <div class="name">이혜원</div>
+                    </div>
+                    <div class="eyes">
+                        <div class="eye left-eye"><div class="pupil"></div></div>
+                        <div class="eye right-eye"><div class="pupil"></div></div>
+                    </div>
+                </div>
+                <div class="character char-19">
+                    <div class="character-label">
+                        <div class="arrow"></div>
+                        <div class="name">임채영</div>
+                    </div>
+                    <div class="eyes">
+                        <div class="eye left-eye"><div class="pupil"></div></div>
+                        <div class="eye right-eye"><div class="pupil"></div></div>
+                    </div>
+                </div>
+                <div class="character char-20">
+                    <div class="character-label">
+                        <div class="arrow"></div>
+                        <div class="name">장민지</div>
+                    </div>
+                    <div class="eyes">
+                        <div class="eye left-eye"><div class="pupil"></div></div>
+                        <div class="eye right-eye"><div class="pupil"></div></div>
+                    </div>
+                </div>
+                <div class="character char-21">
+                    <div class="character-label">
+                        <div class="arrow"></div>
+                        <div class="name">장혜원</div>
+                    </div>
+                    <div class="eyes">
+                        <div class="eye left-eye"><div class="pupil"></div></div>
+                        <div class="eye right-eye"><div class="pupil"></div></div>
+                    </div>
+                </div>
+                <div class="character char-22">
+                    <div class="character-label">
+                        <div class="arrow"></div>
+                        <div class="name">전소영</div>
+                    </div>
+                    <div class="eyes">
+                        <div class="eye left-eye"><div class="pupil"></div></div>
+                        <div class="eye right-eye"><div class="pupil"></div></div>
+                    </div>
+                </div>
+                <div class="character char-23">
+                    <div class="character-label">
+                        <div class="arrow"></div>
+                        <div class="name">한서원</div>
+                    </div>
+                    <div class="eyes">
+                        <div class="eye left-eye"><div class="pupil"></div></div>
+                        <div class="eye right-eye"><div class="pupil"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="background.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
