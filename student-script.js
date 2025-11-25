@@ -65,7 +65,7 @@ const studentProjectContent = {
             <div>
                 <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 10px;">미괴도감: 미나리 매듭의 결속성을 이용하여 연관되지 않은 단어들을 묶었고 하나의 전혀 다른 단어로 재창조하였다. 각 단어들이 이름을 만드는 방식과 유사하여 24마리의 요괴가 담긴 도감을 만들었다.</p>
                 <div style="display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 30px; row-gap: 10px;">
-                    <img src="students/권민서/generative system_권민서.jpg" alt="Generative System" style="height: 700px;">
+                    <img src="students/권민서/generative system_권민서.png" alt="Generative System" style="height: 700px;">
                     <img src="students/권민서/generative_권민서_2.jpg" alt="Generative 2" style="height: 700px;">
                     <img src="students/권민서/generative_권민서_3.jpg" alt="Generative 3" style="height: 700px;">
                 </div>
