@@ -145,6 +145,19 @@ const studentProjectContent = {
             </div>
         `
     },
+    '양지은': {
+        'self-identity': `
+            <div>
+                <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">Still Awake는 새벽 1-5시에만 열리는 가상 워크스페이스로, 새벽에 가장 집중이 잘 되는 개인적인 습성을 브랜드로 만들었다. 남들이 자는 시간에 깨어있다는 것을 하나의 라이프스타일로 인정받을 수 있는 공간을 제안하고, 시간 제한이라는 제약을 커뮤니티의 정체성으로 활용하고자 한다.</p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; row-gap: 10px;">
+                    <img src="students/양지은/1.png" alt="Self Identity 1">
+                    <img src="students/양지은/2.png" alt="Self Identity 2">
+                    <img src="students/양지은/3.png" alt="Self Identity 3">
+                    <img src="students/양지은/4.png" alt="Self Identity 4">
+                </div>
+            </div>
+        `
+    },
     '박성수': {
         'self-identity': `
             <div>
