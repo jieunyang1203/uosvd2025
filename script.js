@@ -1,8 +1,8 @@
 // Color palette for hover effects
 const hoverColors = [
-    { class: 'color-purple', color: '#A24DC4' },
-    { class: 'color-pink', color: '#FF00B6' },
-    { class: 'color-orange', color: '#FF8E01' }
+    { class: 'color-purple', color: '#FF4BFD' },
+    { class: 'color-pink', color: '#4898FB' },
+    { class: 'color-orange', color: '#FEB64B' }
 ];
 
 // Mouse position tracking for pupil movement
@@ -26,18 +26,11 @@ characters.forEach((character, index) => {
     character.addEventListener('mouseenter', function() {
         // Change to random color
         this.classList.add(randomColor.class);
-
-        // Add tilt effect with more rotation
-        const tiltAngle = (Math.random() * 14 - 7); // Random tilt between -7 and 7 degrees
-        this.style.transform = `rotate(${tiltAngle}deg)`;
     });
 
     character.addEventListener('mouseleave', function() {
         // Reset to default color
         this.classList.remove('color-purple', 'color-pink', 'color-orange');
-
-        // Reset rotation
-        this.style.transform = '';
     });
 
     // Click to navigate to student page
@@ -92,7 +85,7 @@ document.documentElement.style.scrollBehavior = 'smooth';
 
 // Project card navigation
 const projectLinks = {
-    'card-1': 'index.html', // Show All
+    'card-1': 'show-all.html', // Show All
     'card-2-group': 'mapping-your-time.html',
     'card-3-group': 'collected-book.html',
     'card-5': 'shape-poster.html',
@@ -108,4 +101,42 @@ Object.keys(projectLinks).forEach(cardId => {
             window.location.href = projectLinks[cardId];
         });
     }
+});
+
+// Glitch effect for text
+const glitchTexts = document.querySelectorAll('.glitch-text');
+const glitchChars = '#$%^&*!@~+-=<>?/|\\';
+
+glitchTexts.forEach(glitchText => {
+    const originalText = glitchText.textContent;
+
+    function glitchEffect() {
+        let iterations = 0;
+        const maxIterations = 8;
+
+        const interval = setInterval(() => {
+            glitchText.textContent = originalText
+                .split('')
+                .map((char, index) => {
+                    if (char === ' ') return ' ';
+                    if (iterations < maxIterations && Math.random() < 0.4) {
+                        return glitchChars[Math.floor(Math.random() * glitchChars.length)];
+                    }
+                    return originalText[index];
+                })
+                .join('');
+
+            iterations++;
+
+            if (iterations >= maxIterations) {
+                clearInterval(interval);
+                glitchText.textContent = originalText;
+            }
+        }, 60);
+    }
+
+    // Run glitch effect continuously every 1.5-2.5 seconds
+    setInterval(() => {
+        glitchEffect();
+    }, Math.random() * 1000 + 1500);
 });

@@ -4,19 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shape Poster</title>
+    <link rel="stylesheet" href="project-style.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            background-color: white;
-            width: 100%;
-            height: 100vh;
+        .smaller-image img {
+            transform: scale(0.85);
         }
     </style>
 </head>
 <body>
+    <!-- Home Logo -->
+    <div class="home-logo" id="home-button">
+        <img src="home.svg" alt="Home">
+    </div>
+
+    <!-- Gallery Container -->
+    <div class="gallery-container" id="gallery"></div>
+
+    <script>
+        const images = [
+            { src: 'shape/권민서shape.png', name: 'Minseo Kwon' },
+            { src: 'shape/박성수shape.png', name: 'Sungsu Park' },
+            { src: 'shape/박지혜shape.png', name: 'Jihye Park' },
+            { src: 'shape/박지우shape.jpg', name: 'Jiwoo Park' },
+            { src: 'shape/신기준shape.png', name: 'Kijoone Shin' },
+            { src: 'shape/이소민shape.png', name: 'Somin Lee' },
+            { src: 'shape/이한나shape.png', name: 'Hanna Lee' },
+            { src: 'shape/장민지shape.png', name: 'Minji Jang' },
+            { src: 'shape/장혜원shape.png', name: 'Hyewon Jang' },
+            { src: 'shape/최문형shape.png', name: 'Moonhyung Choi' },
+            { src: 'shape/한서원shape.png', name: 'Seowon Han' },
+            { src: 'shape/서정민shape.png', name: 'Jungmin Seo' },
+            { src: 'shape/이혜원shape.png', name: 'Hyewon Lee' },
+            { src: 'shape/류시완shape.gif', name: 'Siwan Ryu', smaller: true },
+            { src: 'shape/이시네shape.png', name: 'Shine Lee' }
+        ];
+
+        // Shuffle array
+        function shuffleArray(array) {
+            const shuffled = [...array];
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            return shuffled;
+        }
+
+        // Render gallery
+        const shuffledImages = shuffleArray(images);
+        const gallery = document.getElementById('gallery');
+
+        shuffledImages.forEach((item, index) => {
+            const div = document.createElement('div');
+            div.className = 'gallery-item';
+            if (item.smaller) div.classList.add('smaller-image');
+            div.style.opacity = '0';
+            div.style.animation = `fadeIn 0.6s ease-out forwards`;
+            div.style.animationDelay = `${index * 0.1}s`;
+
+            const img = document.createElement('img');
+            img.src = item.src;
+            img.alt = 'Shape Poster';
+
+            const nameSpan = document.createElement('span');
+            nameSpan.className = 'student-name';
+            nameSpan.textContent = item.name;
+
+            div.appendChild(img);
+            div.appendChild(nameSpan);
+            gallery.appendChild(div);
+        });
+
+        // Home button navigation
+        document.getElementById('home-button').addEventListener('click', () => {
+            window.location.href = 'index.html';
+        });
+    </script>
 </body>
 </html>

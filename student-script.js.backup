@@ -63,9 +63,9 @@ const studentProjectContent = {
         `,
         'generative-system': `
             <div>
-                <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 10px;">미괴도감: 미나리 매듭의 결속성을 이용하여 연관되지 않은 단어들을 묶었고 하나의 전혀 다른 단어로 재창조하였다. 각 단어들이 이름을 만드는 방식과 유사하여 24마리의 요괴가 담긴 도감을 만들었다.</p>
+                <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">미괴도감: 미나리 매듭의 결속성을 이용하여 연관되지 않은 단어들을 묶었고 하나의 전혀 다른 단어로 재창조하였다. 각 단어들이 이름을 만드는 방식과 유사하여 24마리의 요괴가 담긴 도감을 만들었다.</p>
                 <div style="display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 30px; row-gap: 10px;">
-                    <img src="students/권민서/generative system_권민서.jpg" alt="Generative System" style="height: 700px;">
+                    <img src="students/권민서/generative system_권민서.png" alt="Generative System" style="height: 700px;">
                     <img src="students/권민서/generative_권민서_2.jpg" alt="Generative 2" style="height: 700px;">
                     <img src="students/권민서/generative_권민서_3.jpg" alt="Generative 3" style="height: 700px;">
                 </div>
@@ -97,7 +97,7 @@ const studentProjectContent = {
                 <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">Obsidian: 나의 색이 검은색이라는 것을 받아들이고 정체성으로 만들어나가기 위한 첫 번째 미니앨범</p>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; row-gap: 10px;">
                     <img src="students/류시완/SelfIdentity_류시완_1.png" alt="Self Identity 1">
-                    <img src="students/류시완/SelfIdentity_류시완_2.jpg" alt="Self Identity 2">
+                    <img src="students/류시완/SelfIdentity_류시완_2.png" alt="Self Identity 2">
                 </div>
             </div>
         `,
@@ -150,9 +150,9 @@ const studentProjectContent = {
             <div>
                 <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">SARYU: 원목 악세서리</p>
                 <div style="display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 30px; row-gap: 10px;">
-                    <img src="students/박성수/개인브랜딩_박성수_사진1.jpg" alt="Self Identity 1">
-                    <img src="students/박성수/개인브렌딩_박성수_사진2.jpg" alt="Self Identity 2">
-                    <img src="students/박성수/박성수_개인브랜딘_사진3.jpg" alt="Self Identity 3">
+                    <img src="students/박성수/개인브랜딩_박성수_사진1.png" alt="Self Identity 1">
+                    <img src="students/박성수/개인브렌딩_박성수_사진2.png" alt="Self Identity 2">
+                    <img src="students/박성수/박성수_개인브랜딘_사진3.png" alt="Self Identity 3">
                 </div>
             </div>
         `,
@@ -173,7 +173,7 @@ const studentProjectContent = {
                     <img src="students/박성수/시스템 디자인 사진2_박성수.png" alt="Generative System 2">
                     <img src="students/박성수/시스템디자인_사진3_박성수.png" alt="Generative System 3">
                     <img src="students/박성수/시스템디자인_사진4_박성수.png" alt="Generative System 4">
-                    <img src="students/박성수/시스템디자인_사진5_박성수.jpg" alt="Generative System 5">
+                    <img src="students/박성수/시스템디자인_사진5_박성수.png" alt="Generative System 5">
                     <img src="students/박성수/시스템 디자인_사진6_박성수ㅡ.png" alt="Generative System 6">
                 </div>
             </div>
@@ -199,14 +199,14 @@ const studentProjectContent = {
             <div>
                 <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">Sonelle(소넬)은 바람, 대화, 음악, 발자국 같은 일상의 소리들을 기록 가능한 형태로 옮긴다. 흘러가는 세계의 소리들을 물질적이고 시각적인 나만의 아카이브로 바꿔주는 브랜딩 작업.</p>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; row-gap: 10px;">
-                    <img src="students/박지우/1.self-identity_사진1_박지우.jpg" alt="Self Identity 1">
+                    <img src="students/박지우/1.self-identity_사진1_박지우.png" alt="Self Identity 1">
                     <img src="students/박지우/2.self-identity_사진2_박지우.png" alt="Self Identity 2">
                 </div>
             </div>
         `,
         'mapping-your-time': `
             <div>
-                <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">The Way I Listen: '지도'를 '무언가를 향해 나아가는 상태로 해석하고, 내가 향하는 방향이 무엇인지 질문하는 것에서 출발한 작업이다. 나는 자유를 세상의 일로부터 벗어나 온전히 나에게 집중할 수 있는 순간으로 이해하며, 그 순간은 음악을 들을 때 가장 뚜렷하게 찾아온다.</p>
+                <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">The Way I Listen: '지도'를 '무언가를 향해 나아가는 상태'로 해석하고, 내가 향하는 방향이 무엇인지 질문하는 것에서 출발한 작업이다. 나는 자유를 세상의 일로부터 벗어나 온전히 나에게 집중할 수 있는 순간으로 이해하며, 그 순간은 음악을 들을 때 가장 뚜렷하게 찾아온다.</p>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; row-gap: 10px;">
                     <img src="students/박지우/1.Map_사진1_박지우.jpg" alt="Mapping Your Time 1">
                     <img src="students/박지우/2.Map_사진2_박지우.jpg" alt="Mapping Your Time 2">
@@ -295,112 +295,83 @@ const studentProjectContent = {
     },
     '서정민': {
         'self-identity': `
-            <div>
-                <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">SPIDER TEACHER: 거미도 애완동물로서 키울만 하다는 인식을 심어줄 브랜드 입니다.</p>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; row-gap: 10px;">
-                    <img src="students/서정민/개인 아이덴디티/self-identity.png" alt="Self Identity 1">
-                    <img src="students/서정민/개인 아이덴디티/self-identity2.png" alt="Self Identity 2">
-                </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; row-gap: 10px;">
+                <img src="students/서정민/개인 아이덴디티/self-identity.png" alt="Self Identity 1">
+                <img src="students/서정민/개인 아이덴디티/self-identity2.png" alt="Self Identity 2">
             </div>
         `,
         'mapping-your-time': `
-            <div>
-                <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">신체의 지도: 우리 몸이 음식을 먹고, 소화시키는 시간의 지도입니다.</p>
-                <div style="display: grid; grid-template-columns: repeat(4, 1fr); column-gap: 30px; row-gap: 10px;">
-                    <img src="students/서정민/시간 지도 만들기/지도1.jpg" alt="Mapping 1">
-                    <img src="students/서정민/시간 지도 만들기/지도2.jpg" alt="Mapping 2">
-                    <img src="students/서정민/시간 지도 만들기/지도3.jpg" alt="Mapping 3">
-                    <img src="students/서정민/시간 지도 만들기/지도4.jpg" alt="Mapping 4">
-                </div>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); column-gap: 30px; row-gap: 10px;">
+                <img src="students/서정민/시간 지도 만들기/지도1.png" alt="Mapping 1">
+                <img src="students/서정민/시간 지도 만들기/지도2.png" alt="Mapping 2">
+                <img src="students/서정민/시간 지도 만들기/지도3.png" alt="Mapping 3">
+                <img src="students/서정민/시간 지도 만들기/지도4.png" alt="Mapping 4">
             </div>
         `,
         'generative-system': `
-            <div>
-                <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">공생 관계: 자연속에서 볼 수 있는 다양한 공생관계를 그물로 만들었습니다.</p>
-                <div style="display: grid; grid-template-columns: repeat(5, 1fr); column-gap: 20px; row-gap: 10px;">
-                    <img src="students/서정민/저너레이티브/gen1.png" alt="Gen 1">
-                    <img src="students/서정민/저너레이티브/gen2.png" alt="Gen 2">
-                    <img src="students/서정민/저너레이티브/gen3.jpg" alt="Gen 3">
-                    <img src="students/서정민/저너레이티브/gen4.png" alt="Gen 4">
-                    <img src="students/서정민/저너레이티브/gen5.png" alt="Gen 5">
-                    <img src="students/서정민/저너레이티브/gen6.png" alt="Gen 6">
-                    <img src="students/서정민/저너레이티브/gen7.png" alt="Gen 7">
-                    <img src="students/서정민/저너레이티브/gen8.png" alt="Gen 8">
-                    <img src="students/서정민/저너레이티브/gen9.png" alt="Gen 9">
-                    <img src="students/서정민/저너레이티브/gen10.png" alt="Gen 10">
-                    <img src="students/서정민/저너레이티브/gen11.png" alt="Gen 11">
-                    <img src="students/서정민/저너레이티브/gen12.png" alt="Gen 12">
-                    <img src="students/서정민/저너레이티브/gen13.png" alt="Gen 13">
-                    <img src="students/서정민/저너레이티브/gen14.jpg" alt="Gen 14">
-                    <img src="students/서정민/저너레이티브/gen15.jpg" alt="Gen 15">
-                </div>
+            <div style="display: grid; grid-template-columns: repeat(5, 1fr); column-gap: 20px; row-gap: 10px;">
+                <img src="students/서정민/저너레이티브/gen1.png" alt="Gen 1">
+                <img src="students/서정민/저너레이티브/gen2.png" alt="Gen 2">
+                <img src="students/서정민/저너레이티브/gen3.png" alt="Gen 3">
+                <img src="students/서정민/저너레이티브/gen4.png" alt="Gen 4">
+                <img src="students/서정민/저너레이티브/gen5.png" alt="Gen 5">
+                <img src="students/서정민/저너레이티브/gen6.png" alt="Gen 6">
+                <img src="students/서정민/저너레이티브/gen7.png" alt="Gen 7">
+                <img src="students/서정민/저너레이티브/gen8.png" alt="Gen 8">
+                <img src="students/서정민/저너레이티브/gen9.png" alt="Gen 9">
+                <img src="students/서정민/저너레이티브/gen10.png" alt="Gen 10">
+                <img src="students/서정민/저너레이티브/gen11.png" alt="Gen 11">
+                <img src="students/서정민/저너레이티브/gen12.png" alt="Gen 12">
+                <img src="students/서정민/저너레이티브/gen13.png" alt="Gen 13">
+                <img src="students/서정민/저너레이티브/gen14.png" alt="Gen 14">
+                <img src="students/서정민/저너레이티브/gen15.png" alt="Gen 15">
             </div>
         `,
         'shape-poster': `
-            <div>
-                <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">원주율의 재해석: 각이 없고 무한한 원과, 끝이 없는 원주율을 재해석 하여 만들었습니다.</p>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; row-gap: 10px;">
-                    <img src="students/서정민/모양포스터/모양1.png" alt="Shape Poster 1">
-                    <img src="students/서정민/모양포스터/모양2.png" alt="Shape Poster 2">
-                </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; row-gap: 10px;">
+                <img src="students/서정민/모양포스터/모양1.png" alt="Shape Poster 1">
+                <img src="students/서정민/모양포스터/모양2.png" alt="Shape Poster 2">
             </div>
         `,
         'collected-book': `
-            <div>
-                <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">쓰레기봉투 책: 일반 종이가 아닌 가정집에서 쓰는 쓰레기봉투를 크기별로 수집해 책으로 만들었습니다.</p>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; row-gap: 10px;">
-                    <img src="students/서정민/콜렉트 북 /book1.jpg" alt="Collected Book 1">
-                    <img src="students/서정민/콜렉트 북 /book2.png" alt="Collected Book 2">
-                </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; row-gap: 10px;">
+                <img src="students/서정민/콜렉트 북 /book1.png" alt="Collected Book 1">
+                <img src="students/서정민/콜렉트 북 /book2.png" alt="Collected Book 2">
             </div>
         `
     },
     '신기준': {
         'self-identity': `
-            <div>
-                <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">Bondle은 워크샵에 필요한 물품을 고객 맞춤형으로 대여·구매할 수 있는 브랜드로, 세심한 커스터마이징과 편리한 서비스로 워크샵의 완성도를 높입니다.</p>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; row-gap: 10px;">
-                    <img src="students/신기준/Self-identity_사진2_신기준.jpg" alt="Self Identity 2">
-                    <img src="students/신기준/Self-identity_사진3_신기준.jpg" alt="Self Identity 3">
-                </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; row-gap: 10px;">
+                <embed src="students/신기준/Self-identity_사진1_신기준.pdf" type="application/pdf" style="width: 100%; height: 550px;">
+                <embed src="students/신기준/Self-identity_사진2_신기준.pdf" type="application/pdf" style="width: 100%; height: 550px;">
             </div>
         `,
         'mapping-your-time': `
-            <div>
-                <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">Connectome Medical Certificate: 본 작품은 인생 궤적을 몸에 새겨진 신경계 지도로 보고, 현재의 내가 과거의 나를 진단서 형식으로 분석하며 경험과 기억의 흔적을 성찰적으로 아카이브한 작업이다.</p>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; row-gap: 10px;">
-                    <img src="students/신기준/MappingYourTime_사진1_신기준.jpg" alt="Mapping Your Time 1">
-                    <img src="students/신기준/MappingYourTime_사진2_신기준.jpg" alt="Mapping Your Time 2">
-                </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; row-gap: 10px;">
+                <img src="students/신기준/MappingYourTime_사진1_신기준.jpg" alt="Mapping Your Time 1">
+                <img src="students/신기준/MappingYourTime_사진2_신기준.jpg" alt="Mapping Your Time 2">
             </div>
         `,
         'generative-system': `
-            <div>
-                <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">부추: 부추를 소재로 미니멀과 맥시멀 포스터 시리즈를 제작하여, 본질적 선형과 색채의 풍요로움을 탐구하고, 이를 바탕으로 활력과 선형 데이터를 시각화한 아카이브 포스터로 재구성한 작업이다.</p>
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 30px; row-gap: 10px;">
-                    <img src="students/신기준/Gen_사진1_신기준.jpg" alt="Generative 1">
-                    <img src="students/신기준/Gen_사진2_신기준.jpg" alt="Generative 2">
-                    <img src="students/신기준/Gen3신기준.jpg" alt="Generative 3">
-                </div>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 30px; row-gap: 10px;">
+                <embed src="students/신기준/Generative1신기준.pdf" type="application/pdf" style="width: 100%; height: 550px;">
+                <embed src="students/신기준/Generative2신기준.pdf" type="application/pdf" style="width: 100%; height: 550px;">
+                <img src="students/신기준/Generative3신기준.jpg" alt="Generative 3">
             </div>
         `,
         'shape-poster': `
-            <div>
-                <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">삼각형: 삼각형의 '날카로움'과 '긴장감'을 탐구하는 도형 포스터 시리즈로, 종이 모서리의 잠재적 위협, 전 세계 단검이 만든 기하학적 리듬, TRIANGLE 타이포그래피의 역동적 사선을 통해 일상 속 삼각형이 지닌 긴장감과 조형 에너지를 입체적으로 드러낸 작업이다.</p>
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 30px; row-gap: 10px;">
-                    <img src="students/신기준/Shape poster_사진1_신기준.jpg" alt="Shape Poster 1">
-                    <img src="students/신기준/Shape poster_사진2_신기준.jpg" alt="Shape Poster 2">
-                </div>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 30px; row-gap: 10px;">
+                <embed src="students/신기준/Shape poster_사진1_신기준.pdf" type="application/pdf" style="width: 100%; height: 550px;">
+                <embed src="students/신기준/Shape poster_사진2_신기준.pdf" type="application/pdf" style="width: 100%; height: 550px;">
+                <embed src="students/신기준/Shape poster_사진3_신기준.pdf" type="application/pdf" style="width: 100%; height: 550px;">
             </div>
         `,
         'collected-book': `
-            <div>
-                <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">기준쌤: 본 작품은 지구과학 I 강사로서 학생들의 어려움과 성장을 담은 생기부 기록과, 이를 지도하며 교사 자신이 경험한 교육자로서의 변화를 병렬적으로 아카이브한 작업이다.</p>
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 30px; row-gap: 10px;">
-                    <img src="students/신기준/Collected book_사진1_신기준.JPG" alt="Collected Book 1">
-                    <img src="students/신기준/Collected book_사진2_신기준.JPG" alt="Collected Book 2">
-                    <img src="students/신기준/Collected book_사진3_신기준.JPG" alt="Collected Book 3">
-                </div>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 30px; row-gap: 10px;">
+                <img src="students/신기준/Collected book_사진1_신기준.JPG" alt="Collected Book 1">
+                <img src="students/신기준/Collected book_사진2_신기준.JPG" alt="Collected Book 2">
+                <img src="students/신기준/Collected book_사진3_신기준.JPG" alt="Collected Book 3">
             </div>
         `
     },
@@ -423,7 +394,7 @@ const studentProjectContent = {
             <div>
                 <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">나 지도: 여러 사람의 하루 경로를 수집한 후 서로 합성하고 재구성하여 가상 세계의 지도를 제작했다.</p>
                 <div style="display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 30px; row-gap: 10px;">
-                    <img src="students/윤다경/Gen_사진1_윤다경.jpg" alt="Generative System 1">
+                    <img src="students/윤다경/Gen_사진1_윤다경.png" alt="Generative System 1">
                     <img src="students/윤다경/Gen_사진2_윤다경.jpg" alt="Generative System 2">
                     <img src="students/윤다경/Gen_사진3_윤다경.jpg" alt="Generative System 3">
                     <img src="students/윤다경/Gen_사진4_윤다경.jpg" alt="Generative System 4">
@@ -435,7 +406,7 @@ const studentProjectContent = {
                 <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">(No/Every) thing is circle: 정의상 완벽한 원은 어떤 방법으로도 현실 세계에 그려질 수 없지만, 동시에 형태가 적당히 둥그렇거나 불분명한 수많은 물체가 원형으로 칭해지기도 한다. 이러한 상반된 속성을 드러내는 포스터다.</p>
                 <div style="display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 30px; row-gap: 10px;">
                     <img src="students/윤다경/ShapePoster_사진1_윤다경.png" alt="Shape Poster 1">
-                    <img src="students/윤다경/ShapePoster_사진2_윤다경.jpg" alt="Shape Poster 2">
+                    <img src="students/윤다경/ShapePoster_사진2_윤다경.png" alt="Shape Poster 2">
                     <img src="students/윤다경/ShapePoster_사진3_윤다경.png" alt="Shape Poster 3">
                 </div>
             </div>
@@ -457,8 +428,8 @@ const studentProjectContent = {
             <div>
                 <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">잔잠(Zan4am): 새벽4시의 잔잠을 빌려 진정성이 담긴 편지와 선물을 전달할 수 있게 합니다. 편지지와 포장지로 진심이 담긴 마음을 전달하세요.</p>
                 <div style="display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 30px; row-gap: 10px;">
-                    <img src="students/이시네/Self identity_사진1_이시네.jpg" alt="Self Identity 1">
-                    <img src="students/이시네/Self identity_사진2_이시네.jpg" alt="Self Identity 2">
+                    <img src="students/이시네/Self identity_사진1_이시네.png" alt="Self Identity 1">
+                    <img src="students/이시네/Self identity_사진2_이시네.png" alt="Self Identity 2">
                     <img src="students/이시네/Self identity_사진3_이시네.jpeg" alt="Self Identity 3">
                 </div>
             </div>
@@ -524,11 +495,7 @@ const studentProjectContent = {
     '이한나': {
         'self-identity': `
             <div>
-                <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">모뉴망은 나의 성향에서 출발한 브랜드이다. 모뉴망은 진지하지만 웃기고, 허술하지만 이상하게 믿음이 가는 요가원이다. 길거리에서 모뉴망을 마주친다면 절대 지나치고 싶게 하고 싶지 않다.</p>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; row-gap: 10px;">
-                    <img src="students/이한나/이한나self.png" alt="Self Identity 1">
-                    <img src="students/이한나/self2.jpeg" alt="Self Identity 2">
-                </div>
+                <img src="students/이한나/이한나self.png" alt="Self Identity">
             </div>
         `,
         'mapping-your-time': `
@@ -556,7 +523,7 @@ const studentProjectContent = {
                     <img src="students/이한나/쉐입포스터_1_이한나.png" alt="Shape Poster 1">
                     <img src="students/이한나/쉐입포스터_2_이한나.png" alt="Shape Poster 2">
                     <img src="students/이한나/쉐입포스터_3_이한나.png" alt="Shape Poster 3">
-                    <img src="students/이한나/쉐입포스터_4_이한나.jpg" alt="Shape Poster 4">
+                    <img src="students/이한나/쉐입포스터_4_이한나.png" alt="Shape Poster 4">
                     <img src="students/이한나/쉐입포스터_5_이한나.png" alt="Shape Poster 5">
                 </div>
             </div>
@@ -566,7 +533,7 @@ const studentProjectContent = {
                 <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">편지를 보호하는 편지 봉투를 모았습니다. 편지의 내용도 매우 사적이지만 주소 이름 등등, 매우 민감한 정보들이 편지를 감싸고 있다는 사실이 재밌어서 모으게 되었다.편지 봉투를 감싸고 있는 것 또한 봉부의 형태를 띠는 콜렉트북으로 제작했다.</p>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; row-gap: 10px;">
                     <img src="students/이한나/이한나1.png" alt="Collected Book 1">
-                    <img src="students/이한나/이한나2.jpg" alt="Collected Book 2">
+                    <img src="students/이한나/이한나2.png" alt="Collected Book 2">
                 </div>
             </div>
         `
@@ -620,12 +587,9 @@ const studentProjectContent = {
     },
     '임채영': {
         'self-identity': `
-            <div>
-                <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">LUMINAUT: 내면의 빛을 따라 떠나는 가상 항해, 루미노트. 진단을 통해 지금 당신에게 가장 필요한 휴식의 섬을 발견하고, 그 신비로운 여정 속에서 진정한 나를 마주하는 특별한 경험을 선사합니다.</p>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; row-gap: 10px;">
-                    <img src="students/임채영/셀프아이덴티티_사진1_임채영.png" alt="Self Identity 1">
-                    <img src="students/임채영/셀프아이덴티티_사진2_임채영.png" alt="Self Identity 2">
-                </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; row-gap: 10px;">
+                <img src="students/임채영/셀프아이덴티티_사진1_임채영.png" alt="Self Identity 1">
+                <img src="students/임채영/셀프아이덴티티_사진2_임채영.png" alt="Self Identity 2">
             </div>
         `
     },
@@ -643,8 +607,8 @@ const studentProjectContent = {
             <div>
                 <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">A daily containing my time: 지도를 추억을 찾아주는 하나의 수단이라고 생각하였다. 그렇기에 내 추억을 나타낼 수 있는 물건들을 모아 다이어리에 꾸며 지도를 나타내었다. 영수증이나, 그림, 물건의 택등을 사용하였다.</p>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; row-gap: 10px;">
-                    <img src="students/이소민/mapping1.jpg" alt="Mapping Your Time 1">
-                    <img src="students/이소민/mapping2.jpg" alt="Mapping Your Time 2">
+                    <img src="students/이소민/mapping1.png" alt="Mapping Your Time 1">
+                    <img src="students/이소민/mapping2.png" alt="Mapping Your Time 2">
                 </div>
             </div>
         `,
@@ -667,254 +631,155 @@ const studentProjectContent = {
             <div>
                 <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">A precious memory: 사람들이 사소하거나, 특별한 날에 적어주는 쪽지, 편지 등을 잘 버리지 못하는 나를 나타내기 위해서 지금껏 모아두었던 편지들을 종류별로 정리하여 커다란 편지지에 넣어 그것 또한 하나의 편지로 나타냈다.</p>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; row-gap: 10px;">
-                    <img src="students/이소민/collected1.jpg" alt="Collected Book 1">
-                    <img src="students/이소민/collected2.jpg" alt="Collected Book 2">
+                    <img src="students/이소민/collected1.png" alt="Collected Book 1">
+                    <img src="students/이소민/collected2.png" alt="Collected Book 2">
                 </div>
             </div>
         `
     },
     '장민지': {
         'self-identity': `
-            <div>
-                <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">Minism은 개인적 아이덴티티를 담은 'min'과 'ism'을 결합해 만든 미니멀리즘 라이프스타일 브랜드입니다. 단정하고 절제된 감성을 기반으로 감각적인 일상의 오브제를 제안합니다.</p>
-                <div style="display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 30px; row-gap: 10px;">
-                    <img src="students/장민지/self1.png" alt="Self Identity 1">
-                    <img src="students/장민지/self2.jpg" alt="Self Identity 2">
-                    <img src="students/장민지/self3.jpg" alt="Self Identity 3">
-                    <img src="students/장민지/self4.png" alt="Self Identity 4">
-                </div>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 30px; row-gap: 10px;">
+                <img src="students/장민지/self1.png" alt="Self Identity 1">
+                <img src="students/장민지/self2.jpg" alt="Self Identity 2">
+                <img src="students/장민지/self3.jpg" alt="Self Identity 3">
+                <img src="students/장민지/self4.png" alt="Self Identity 4">
             </div>
         `,
         'generative-system': `
-            <div>
-                <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">당근교를 믿으십니까?: '당근이지'는 '당연하지'에서 비롯된 언어유희이자 무조건적인 긍정을 상징하는 표현입니다. 이 의미를 반복,확장해 당근교라는 가상의 종교에 빠져들게 하는 제너러티브 시스템을 제작했습니다.</p>
-                <div style="display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 30px; row-gap: 10px;">
-                    <img src="students/장민지/gen1.png" alt="Generative System 1">
-                    <img src="students/장민지/gen2.png" alt="Generative System 2">
-                    <img src="students/장민지/gen3.jpg" alt="Generative System 3">
-                    <img src="students/장민지/gen4.png" alt="Generative System 4">
-                    <img src="students/장민지/gen5.png" alt="Generative System 5">
-                </div>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 30px; row-gap: 10px;">
+                <img src="students/장민지/gen1.png" alt="Generative System 1">
+                <img src="students/장민지/gen2.png" alt="Generative System 2">
+                <img src="students/장민지/gen3.png" alt="Generative System 3">
+                <img src="students/장민지/gen4.png" alt="Generative System 4">
+                <img src="students/장민지/gen5.png" alt="Generative System 5">
             </div>
         `,
         'shape-poster': `
-            <div>
-                <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">We live in a squared ___: 하루,한달,일년이 모두 사각형의 구조 안에서 반복된다는 점에 주목해 포스터 3연작을 만들었습니다. 이를 바탕으로 최종결과물로 달력과 스티커를 제작했습니다.</p>
-                <div style="display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 30px; row-gap: 10px;">
-                    <img src="students/장민지/Shape Poster_1_장민지.png" alt="Shape Poster 1">
-                    <img src="students/장민지/Shape Poster_2_장민지.png" alt="Shape Poster 2">
-                    <img src="students/장민지/Shape Poster_3_장민지.png" alt="Shape Poster 3">
-                    <img src="students/장민지/Shape Poster_4_장민지.png" alt="Shape Poster 4">
-                    <img src="students/장민지/Shape Poster_5_장민지.png" alt="Shape Poster 5">
-                </div>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 30px; row-gap: 10px;">
+                <img src="students/장민지/Shape Poster_1_장민지.png" alt="Shape Poster 1">
+                <img src="students/장민지/Shape Poster_2_장민지.png" alt="Shape Poster 2">
+                <img src="students/장민지/Shape Poster_3_장민지.png" alt="Shape Poster 3">
+                <img src="students/장민지/Shape Poster_4_장민지.png" alt="Shape Poster 4">
+                <img src="students/장민지/Shape Poster_5_장민지.png" alt="Shape Poster 5">
             </div>
         `
     },
     '장혜원': {
         'self-identity': `
-            <div>
-                <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">moo migin: 작은 떨림조차 없다라는 의미의 무미진(moo migin)은 중요한 순간에 쉽게 긴장하는 사람들을 위한 플래너 브랜드이다. 긴장과 떨림을 준비의 에너지원으로 활용하며, 계획의 구체화를 통해 사용자들이 자신에 대한 확신을 갖도록 돕는다.</p>
-                <div style="display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 30px; row-gap: 10px;">
-                    <img src="students/장혜원/self-identity_사진1_장혜원.jpg" alt="Self Identity 1">
-                    <img src="students/장혜원/self-identity_사진2_장혜원.jpg" alt="Self Identity 2">
-                    <img src="students/장혜원/self-identity_사진3_장혜원.jpg" alt="Self Identity 3">
-                    <img src="students/장혜원/self-identity_사진4_장혜원.png" alt="Self Identity 4">
-                </div>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 30px; row-gap: 10px;">
+                <img src="students/장혜원/self-identity_사진1_장혜원.jpg" alt="Self Identity 1">
+                <img src="students/장혜원/self-identity_사진2_장혜원.jpg" alt="Self Identity 2">
+                <img src="students/장혜원/self-identity_사진3_장혜원.jpg" alt="Self Identity 3">
+                <img src="students/장혜원/self-identity_사진4_장혜원.png" alt="Self Identity 4">
             </div>
         `,
         'mapping-your-time': `
-            <div>
-                <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">the way to get a good night's sleep: 하루를 마무리하고 숙면을 취하는 과정을 섬에 도달하는 여정에 비유하였다. 복잡한 머릿속을 비우고 편안한 휴식에 이르는 효율적인 경로를 안내해주는 지도이다.</p>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; row-gap: 10px;">
-                    <img src="students/장혜원/MappingYourTime_사진1_장혜원.jpg" alt="Mapping Your Time 1">
-                    <img src="students/장혜원/MappingYourTime_사진2_장혜원.jpg" alt="Mapping Your Time 2">
-                </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; row-gap: 10px;">
+                <img src="students/장혜원/MappingYourTime_사진1_장혜원.jpg" alt="Mapping Your Time 1">
+                <img src="students/장혜원/MappingYourTime_사진2_장혜원.jpg" alt="Mapping Your Time 2">
             </div>
         `,
         'generative-system': `
-            <div>
-                <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">pieces of memories: 색연필을 깎아서 나온 부스러기를 선 이미지로 추출하여 순환하는 기억이라는 주제를 시각화했다. 부스러기 선 하나하나가 특정 순간의 기억을 상징한다. 이를 바탕으로 특별한 순간을 기록하여 보관할 수 있는 카드와 아이덴티티 영상을 제작했다.</p>
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 30px; row-gap: 10px;">
-                    <img src="students/장혜원/gen1.png" alt="Generative System 1">
-                    <img src="students/장혜원/gen2.png" alt="Generative System 2">
-                    <img src="students/장혜원/gen3.jpg" alt="Generative System 3">
-                </div>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 30px; row-gap: 10px;">
+                <img src="students/장혜원/gen1.png" alt="Generative System 1">
+                <img src="students/장혜원/gen2.png" alt="Generative System 2">
+                <img src="students/장혜원/gen3.jpg" alt="Generative System 3">
             </div>
         `,
         'shape-poster': `
-            <div>
-                <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">circles in sentences: 기본 도형인 원을 마침표, 가운뎃점 등 문장부호로 해석한 3연작 포스터이다. 원형 문장부호의 정확한 위치 정보와 문장 내 역할 및 의미를 명확하게 표현하고자 했다.</p>
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 30px; row-gap: 10px;">
-                    <img src="students/장혜원/maximal_사진_장혜원.jpg" alt="Shape Poster Maximal">
-                    <img src="students/장혜원/minimal_사진_장혜원.png" alt="Shape Poster Minimal">
-                    <img src="students/장혜원/Shape poster_사진1_장혜원.png" alt="Shape Poster 1">
-                    <img src="students/장혜원/Shape poster_사진2_장혜원.png" alt="Shape Poster 2">
-                    <img src="students/장혜원/Shape poster_사진3_장혜원.png" alt="Shape Poster 3">
-                </div>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 30px; row-gap: 10px;">
+                <img src="students/장혜원/maximal_사진_장혜원.jpg" alt="Shape Poster Maximal">
+                <img src="students/장혜원/minimal_사진_장혜원.png" alt="Shape Poster Minimal">
+                <img src="students/장혜원/Shape poster_사진1_장혜원.png" alt="Shape Poster 1">
+                <img src="students/장혜원/Shape poster_사진2_장혜원.png" alt="Shape Poster 2">
+                <img src="students/장혜원/Shape poster_사진3_장혜원.png" alt="Shape Poster 3">
             </div>
         `,
         'collected-book': `
-            <div>
-                <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">Keyring Card Book: 명함을 열쇠고리 형태로 엮어 만든 콜렉트북이다. 동일한 카테고리별로 명함을 하나의 고리에 묶어 구성했다. 필요한 정보를 직관적으로 찾아볼 수 있게 하여 편의성을 높이고자 했다.</p>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; row-gap: 10px;">
-                    <img src="students/장혜원/collected book_사진1_장혜원.jpg" alt="Collected Book 1">
-                    <img src="students/장혜원/collected book_사진2_장혜원.jpg" alt="Collected Book 2">
-                </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; row-gap: 10px;">
+                <img src="students/장혜원/collected book_사진1_장혜원.jpg" alt="Collected Book 1">
+                <img src="students/장혜원/collected book_사진2_장혜원.jpg" alt="Collected Book 2">
             </div>
         `
     },
     '전소영': {
         'mapping-your-time': `
-            <div>
-                <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">Lost In Melbourne: 단시간에 이동할 수는 없지만 지도는 우리가 결론적으로 원하는 곳에 다다르게 하는 차원문 같은 존재라고 해석했다. 영상 내내 사진 속 일부분의 부분이 랜덤하게 다른 장소로 계속해서 이어저나가며 교환학생 시절 방문한 장소로 넘어가는 영상을 제작하였다.</p>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; row-gap: 10px;">
-                    <img src="students/전소영/MappingYourTime_사진1_전소영.PNG" alt="Mapping Your Time 1">
-                    <img src="students/전소영/MappingYourTime_사진2_전소영.png" alt="Mapping Your Time 2">
-                </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; row-gap: 10px;">
+                <img src="students/전소영/MappingYourTime_사진1_전소영.PNG" alt="Mapping Your Time 1">
+                <img src="students/전소영/MappingYourTime_사진2_전소영.png" alt="Mapping Your Time 2">
             </div>
         `,
         'generative-system': `
-            <div>
-                <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">다중인격 가방: 완두콩의 특징을 다중인격으로 해석하고, 여러 성격의 아이덴티티를 그래픽화 하고 여러 짜투리 천에 실크스트린 하여 'tag'를 만들어 스티치하였다.</p>
-                <div style="display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 30px; row-gap: 10px;">
-                    <img src="students/전소영/gen1.jpg" alt="Generative System 1">
-                    <img src="students/전소영/gen2.jpg" alt="Generative System 2">
-                    <img src="students/전소영/gen3.jpg" alt="Generative System 3">
-                    <img src="students/전소영/gen4.jpg" alt="Generative System 4">
-                </div>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 30px; row-gap: 10px;">
+                <img src="students/전소영/gen1.jpg" alt="Generative System 1">
+                <img src="students/전소영/gen2.jpg" alt="Generative System 2">
+                <img src="students/전소영/gen3.jpg" alt="Generative System 3">
+                <img src="students/전소영/gen4.jpg" alt="Generative System 4">
             </div>
         `,
         'shape-poster': `
-            <div>
-                <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">무제: 사람의 얼굴을 해체하거나, 정사각형의 전개도 안에 사람의 신체를 삽입하였다.</p>
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 30px; row-gap: 10px;">
-                    <img src="students/전소영/ShapePoster_1_전소영.png" alt="Shape Poster 1">
-                    <img src="students/전소영/ShapePoster_2_전소영.png" alt="Shape Poster 2">
-                    <img src="students/전소영/ShapePoster_3_전소영.png" alt="Shape Poster 3">
-                </div>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 30px; row-gap: 10px;">
+                <img src="students/전소영/ShapePoster_1_전소영.png" alt="Shape Poster 1">
+                <img src="students/전소영/ShapePoster_2_전소영.png" alt="Shape Poster 2">
+                <img src="students/전소영/ShapePoster_3_전소영.png" alt="Shape Poster 3">
             </div>
         `,
         'collected-book': `
-            <div>
-                <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">멸종위기책: 여러 이유로 버리지 않고 모아둔 책들을 모아 책을 제작하였다. 어릴적의 추억이나 혹은 미처 발견하지 못해서 생존한 인쇄물들이 모아져있고, 전시 이후에 멸종될 예정이다.</p>
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 30px; row-gap: 10px;">
-                    <img src="students/전소영/Collectedbook_1_전소영.jpg" alt="Collected Book 1">
-                    <img src="students/전소영/Collectedbook_2_전소영.jpg.jpg" alt="Collected Book 2">
-                    <img src="students/전소영/Collectedbook_3_전소영.jpg.jpg" alt="Collected Book 3">
-                </div>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 30px; row-gap: 10px;">
+                <img src="students/전소영/Collectedbook_1_전소영.jpg" alt="Collected Book 1">
+                <img src="students/전소영/Collectedbook_2_전소영.jpg.jpg" alt="Collected Book 2">
+                <img src="students/전소영/Collectedbook_3_전소영.jpg.jpg" alt="Collected Book 3">
             </div>
         `
     },
     '최문형': {
         'self-identity': `
-            <div>
-                <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">우린(ourin)은 마음 전달의 과정에 주목합니다. 마음을 전하기 위해서 우리는 선물을 고르고 편지를 씁니다. 그 과정에서 비롯되는 다양한 방식과 감정을 관찰하고, 기록하며, 제안합니다. 어쩌면 단순히 물건을 건네는 행위가 어떻게 마음으로 전해지고 우리가 되는지 들여봅니다. 선물이라는 익숙한 틀에서 가장 작은 단위에서의 마음 전달을 탐구합니다.</p>
-                <div style="display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 30px; row-gap: 10px;">
-                    <img src="students/최문형/Self-Identity_사진1_최문형.png" alt="Self Identity 1" loading="lazy">
-                    <img src="students/최문형/Self-Identity_사진2_최문형.png" alt="Self Identity 2" loading="lazy">
-                    <img src="students/최문형/Self-Identity_사진3_최문형.png" alt="Self Identity 3" loading="lazy">
-                    <img src="students/최문형/Self-Identity_사진4_최문형.png" alt="Self Identity 4" loading="lazy">
-                    <img src="students/최문형/Self-Identity_사진5_최문형.png" alt="Self Identity 5" loading="lazy">
-                    <img src="students/최문형/Self-Identity_사진6_최문형.png" alt="Self Identity 6" loading="lazy">
-                </div>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 30px; row-gap: 10px;">
+                <img src="students/최문형/Self-Identity_사진1_최문형.png" alt="Self Identity 1" loading="lazy">
+                <img src="students/최문형/Self-Identity_사진2_최문형.png" alt="Self Identity 2" loading="lazy">
+                <img src="students/최문형/Self-Identity_사진3_최문형.png" alt="Self Identity 3" loading="lazy">
+                <img src="students/최문형/Self-Identity_사진4_최문형.png" alt="Self Identity 4" loading="lazy">
+                <img src="students/최문형/Self-Identity_사진5_최문형.png" alt="Self Identity 5" loading="lazy">
+                <img src="students/최문형/Self-Identity_사진6_최문형.png" alt="Self Identity 6" loading="lazy">
             </div>
         `,
         'mapping-your-time': `
-            <div>
-                <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">고요를 위한 나만의 지도 (my map for peace): 내가 정의한 지도는 내가 가야하는 길을 알려주는 것이다. 내가 가야할 목적지에 더 쉽고 빠르게 도착할 수 있도록한다. 하지만 이 지도는 최고가 아닌 최선이고 더 나은 길이 있을 수 있다. 일상의 시간속에서 필요한 지도를 만들었다. 이것은 잠들기 위한, 혼자 있기 위한, 생각 많고 자꾸 깜빡하는 나를 위한, 토익 점수가 필요한, 일상 속의 평화를 위한 지도이다.</p>
-                <div style="display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 30px; row-gap: 10px;">
-                    <img src="students/최문형/MappingYourTime_사진1_최문형.jpg" alt="Mapping Your Time 1" loading="lazy">
-                    <img src="students/최문형/MappingYourTime_사진2_최문형.jpg" alt="Mapping Your Time 2" loading="lazy">
-                    <img src="students/최문형/MappingYourTime_사진3_최문형.jpg" alt="Mapping Your Time 3" loading="lazy">
-                    <img src="students/최문형/MappingYourTime_사진4_최문형.jpg" alt="Mapping Your Time 4" loading="lazy">
-                    <img src="students/최문형/MappingYourTime_사진5_최문형.jpg" alt="Mapping Your Time 5" loading="lazy">
-                    <img src="students/최문형/MappingYourTime_사진6_최문형.jpg" alt="Mapping Your Time 6" loading="lazy">
-                    <img src="students/최문형/MappingYourTime_사진7_최문형.jpg" alt="Mapping Your Time 7" loading="lazy">
-                    <img src="students/최문형/MappingYourTime_사진8_최문형.jpg" alt="Mapping Your Time 8" loading="lazy">
-                    <img src="students/최문형/MappingYourTime_사진9_최문형.png의 사본.png" alt="Mapping Your Time 9" loading="lazy">
-                </div>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 30px; row-gap: 10px;">
+                <img src="students/최문형/MappingYourTime_사진1_최문형.png" alt="Mapping Your Time 1" loading="lazy">
+                <img src="students/최문형/MappingYourTime_사진2_최문형.jpg" alt="Mapping Your Time 2" loading="lazy">
+                <img src="students/최문형/MappingYourTime_사진3_최문형.jpg" alt="Mapping Your Time 3" loading="lazy">
+                <img src="students/최문형/MappingYourTime_사진4_최문형.jpg" alt="Mapping Your Time 4" loading="lazy">
+                <img src="students/최문형/MappingYourTime_사진5_최문형.jpg" alt="Mapping Your Time 5" loading="lazy">
+                <img src="students/최문형/MappingYourTime_사진6_최문형.jpg" alt="Mapping Your Time 6" loading="lazy">
+                <img src="students/최문형/MappingYourTime_사진7_최문형.jpg" alt="Mapping Your Time 7" loading="lazy">
+                <img src="students/최문형/MappingYourTime_사진8_최문형.jpg" alt="Mapping Your Time 8" loading="lazy">
+                <img src="students/최문형/MappingYourTime_사진9_최문형.png의 사본.png" alt="Mapping Your Time 9" loading="lazy">
             </div>
         `,
         'generative-system': `
-            <div>
-                <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">어제오늘내일: 토마토는 성장 과정에서 받은 햇살, 바람, 물, 시간의 작은 차이로 전혀 다른 토마토가 된다. 우리도 하루하루 작은 선택에 따라 매일매일 또 다른 내가 되어간다. 그리고 아주 작은 선택에도 다른 사람이 된다. 토마토를 기반으로 포스터를 만들고 이를 바탕으로 일력을 제작하였다. 하루하루 쌓여서 내가 되어간다는 의미를 담았다.</p>
-                <div style="display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 30px; row-gap: 10px;">
-                    <img src="students/최문형/Generative System_사진1_최문형.jpg" alt="Generative System 1" loading="lazy">
-                    <img src="students/최문형/Generative System_사진2_최문형.jpg" alt="Generative System 2" loading="lazy">
-                    <img src="students/최문형/Generative System_사진3_최문형.png" alt="Generative System 3" loading="lazy">
-                    <img src="students/최문형/Generative System_사진4_최문형.png" alt="Generative System 4" loading="lazy">
-                    <img src="students/최문형/Generative System_사진5_최문형.png" alt="Generative System 5" loading="lazy">
-                    <img src="students/최문형/Generative System_사진6_최문형.png" alt="Generative System 6" loading="lazy">
-                </div>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 30px; row-gap: 10px;">
+                <img src="students/최문형/Generative System_사진1_최문형.png" alt="Generative System 1" loading="lazy">
+                <img src="students/최문형/Generative System_사진2_최문형.png" alt="Generative System 2" loading="lazy">
+                <img src="students/최문형/Generative System_사진3_최문형.png" alt="Generative System 3" loading="lazy">
+                <img src="students/최문형/Generative System_사진4_최문형.png" alt="Generative System 4" loading="lazy">
+                <img src="students/최문형/Generative System_사진5_최문형.png" alt="Generative System 5" loading="lazy">
+                <img src="students/최문형/Generative System_사진6_최문형.png" alt="Generative System 6" loading="lazy">
             </div>
         `,
         'shape-poster': `
-            <div>
-                <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">we can be anything: 기본 형태인 동그라미에 대해 조사하여 포스터를 만들었다. 동그라미가 내는 소리에 집중해보기도 하고, 동그라미가 주는 긍정적인 순간들에 대해 모아보기도 했다. 또한 우리의 시작은 모두 원형이었다는 메시지를 가지고 작업하여 씨앗을 통해 타이포를 만들어 포스터를 제작했다.</p>
-                <div style="display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 30px; row-gap: 10px;">
-                    <img src="students/최문형/Shape Poster_사진1_최문형.jpg" alt="Shape Poster 1" loading="lazy">
-                    <img src="students/최문형/Shape Poster_사진2_최문형.jpg" alt="Shape Poster 2" loading="lazy">
-                    <img src="students/최문형/Shape Poster_사진3_최문형.jpg" alt="Shape Poster 3" loading="lazy">
-                    <img src="students/최문형/Shape Poster_사진4_최문형.png" alt="Shape Poster 4" loading="lazy">
-                </div>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 30px; row-gap: 10px;">
+                <img src="students/최문형/Shape Poster_사진1_최문형.jpg" alt="Shape Poster 1" loading="lazy">
+                <img src="students/최문형/Shape Poster_사진2_최문형.jpg" alt="Shape Poster 2" loading="lazy">
+                <img src="students/최문형/Shape Poster_사진3_최문형.jpg" alt="Shape Poster 3" loading="lazy">
+                <img src="students/최문형/Shape Poster_사진4_최문형.png" alt="Shape Poster 4" loading="lazy">
             </div>
         `,
         'collected-book': `
-            <div>
-                <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">명함 모음책: 존재하는 인쇄물을 수집하고 재배열하는 행위를 통해 하나의 완성된 책을 제작하는 프로젝트입니다. 디자이너들의 명함을 수집하여 한 번에 볼 수 있는 폴더 형식의 책을 만들었다. 이 책은 옆으로 넘겨서 볼 수도 있고, 넘겨서 볼 수도 있다.</p>
-                <div style="display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 30px; row-gap: 10px;">
-                    <img src="students/최문형/Collected Book_사진1_최문형.png" alt="Collected Book 1" loading="lazy">
-                    <img src="students/최문형/Collected Book_사진2_최문형.png" alt="Collected Book 2" loading="lazy">
-                    <img src="students/최문형/Collected Book_사진3_최문형.png" alt="Collected Book 3" loading="lazy">
-                </div>
-            </div>
-        `
-    },
-    '한서원': {
-        'self-identity': `
-            <div>
-                <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">일차원(ilchawon): 조용하지만 강하다는 공통점을 가진 해와 차를 결합한 이름의 차 브랜드이다. 해가 하루의 차원을 열고 닫듯이 차를 통해 새로운 차원을 만날 수 있다는 의미를 가진다.</p>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; row-gap: 10px;">
-                    <img src="students/한서원/한서원_selfidentity_1.jpg" alt="Self Identity 1">
-                    <img src="students/한서원/한서원_selfidentity_2-100.jpg" alt="Self Identity 2">
-                </div>
-            </div>
-        `,
-        'mapping-your-time': `
-            <div>
-                <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">doing on subway: 등교하는 동안의 시간을 지도 형태로 표현하였다. 집에서 학교까지 지하철을 타고 이동하며 하는 책 읽기, 노래 듣기, 자기 등의 활동을 여러 노선도로 분류하였다. 활동이 전환되는 지점은 환승역으로 표시하였다.</p>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; row-gap: 10px;">
-                    <img src="students/한서원/한서원_mapping_1.jpg" alt="Mapping Your Time 1">
-                    <img src="students/한서원/한서원_mapping_2.jpg" alt="Mapping Your Time 2">
-                </div>
-            </div>
-        `,
-        'generative-system': `
-            <div>
-                <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">새빨간 루머: 토마토는 떨어짐과 동시에 확산되고 본래의 형태를 잃는다. 루머도 마찬가지로 완전했던 이야기가 사람들의 입을 거쳐 확산될 수록 원래의 형태를 잃는다. 새빨간 루머는 이야기의 요약을 통해 완전했던 이야기가 어떻게 변형되어가는 지를 느끼도록한다.</p>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; row-gap: 10px;">
-                    <img src="students/한서원/한서원_generative_1.jpg" alt="Generative System 1">
-                    <img src="students/한서원/한서원_generative_2.jpg" alt="Generative System 2">
-                </div>
-            </div>
-        `,
-        'shape-poster': `
-            <div>
-                <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">square, the most modern and traditional: 사각형은 가장 현대적이면서도 가장 오래된 도형이다. 과거와 현재, 아날로그와 디지털을 잇는 매개체로서 사각형의 형태를 표현해보았다.전통 창살의 이미지와 디지털 이미지를 결합하여 그 조형적 공통점을 탐구한 시리즈 포스터 3점을 제작하였다.</p>
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 30px; row-gap: 10px;">
-                    <img src="students/한서원/한서원_shape poster-1.jpg" alt="Shape Poster 1">
-                    <img src="students/한서원/한서원_shape poster-2.jpg" alt="Shape Poster 2">
-                    <img src="students/한서원/한서원_shape poster-3.jpg" alt="Shape Poster 3">
-                </div>
-            </div>
-        `,
-        'collected-book': `
-            <div>
-                <p style="word-break: keep-all; line-height: 1.5; margin-bottom: 30px;">re:code: 전체 주제를 '코드(Code)'로 설정하고, 바코드와 QR코드를 활용해 제작하였다. 바코드와 QR코드는 중요한 역할을 하지만 늘 뒤에 있거나 숨겨져 있다. 이 콜렉티드 북은 그런 코드들을 전면에 배치하여 잘 보일 수 있게 제작하였다.</p>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; row-gap: 10px;">
-                    <img src="students/한서원/한서원_collectd book_1.jpg" alt="Collected Book 1">
-                    <img src="students/한서원/한서원_collected book_2.jpg" alt="Collected Book 2">
-                </div>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 30px; row-gap: 10px;">
+                <img src="students/최문형/Collected Book_사진1_최문형.png" alt="Collected Book 1" loading="lazy">
+                <img src="students/최문형/Collected Book_사진2_최문형.png" alt="Collected Book 2" loading="lazy">
+                <img src="students/최문형/Collected Book_사진3_최문형.png" alt="Collected Book 3" loading="lazy">
             </div>
         `
     }
