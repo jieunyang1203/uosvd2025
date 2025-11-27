@@ -333,7 +333,7 @@ const studentProjectContent = {
                 <div style="display: grid; grid-template-columns: repeat(5, 1fr); column-gap: 20px; row-gap: 10px;">
                     <img src="students/서정민/저너레이티브/gen1.png" alt="Gen 1">
                     <img src="students/서정민/저너레이티브/gen2.png" alt="Gen 2">
-                    <img src="students/서정민/저너레이티브/gen3.jpg" alt="Gen 3">
+                    <img src="students/서정민/저너레이티브/gen3.png" alt="Gen 3">
                     <img src="students/서정민/저너레이티브/gen4.png" alt="Gen 4">
                     <img src="students/서정민/저너레이티브/gen5.png" alt="Gen 5">
                     <img src="students/서정민/저너레이티브/gen6.png" alt="Gen 6">
@@ -403,6 +403,7 @@ const studentProjectContent = {
                 <div style="display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 30px; row-gap: 10px;">
                     <img src="students/신기준/Shape poster_사진1_신기준.jpg" alt="Shape Poster 1">
                     <img src="students/신기준/Shape poster_사진2_신기준.jpg" alt="Shape Poster 2">
+                    <img src="students/신기준/shape3.jpeg" alt="Shape Poster 3">
                 </div>
             </div>
         `,

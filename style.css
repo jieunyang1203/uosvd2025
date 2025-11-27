@@ -114,16 +114,12 @@ body {
     transform-origin: left top;
 }
 
-.card-svg .svg-hover {
-    display: none;
+.card-svg img {
+    transition: filter 0.2s ease;
 }
 
-.card-svg:hover .svg-default {
-    display: none;
-}
-
-.card-svg:hover .svg-hover {
-    display: block;
+.card-svg:hover img {
+    filter: blur(2px);
 }
 
 .orange-card {
