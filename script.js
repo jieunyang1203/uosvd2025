@@ -1,5 +1,6 @@
 // Random hover colors (the four menu palette colors)
 const hoverColors = ['color-pink', 'color-orange', 'color-sky', 'color-green'];
+const mobileLandingQuery = window.matchMedia('(max-width: 768px)');
 
 // Representative Show All image per student (shown in the left panel on hover)
 const studentImages = {
@@ -36,44 +37,48 @@ let mouseX = 0;
 let mouseY = 0;
 
 // Track mouse movement
-document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    updatePupilPositions();
-});
+if (!mobileLandingQuery.matches) {
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        updatePupilPositions();
+    });
+}
 
 // Character hover effects with color change and tilt
 const characters = document.querySelectorAll('.character');
 
-characters.forEach((character, index) => {
-    // On hover: assign a random palette color (eyes hide & name shows via CSS)
-    // and show that student's representative image in the left panel.
-    character.addEventListener('mouseenter', function() {
-        const c = hoverColors[Math.floor(Math.random() * hoverColors.length)];
-        this.classList.remove('color-pink', 'color-orange', 'color-sky', 'color-green');
-        this.classList.add(c);
+if (!mobileLandingQuery.matches) {
+    characters.forEach((character, index) => {
+        // On hover: assign a random palette color (eyes hide & name shows via CSS)
+        // and show that student's representative image in the left panel.
+        character.addEventListener('mouseenter', function() {
+            const c = hoverColors[Math.floor(Math.random() * hoverColors.length)];
+            this.classList.remove('color-pink', 'color-orange', 'color-sky', 'color-green');
+            this.classList.add(c);
 
-        const nameEl = this.querySelector('.face-name');
-        const name = nameEl ? nameEl.textContent.trim() : '';
-        const src = studentImages[name];
-        if (previewEl && src) {
-            previewEl.src = encodeURI(src);
-            previewEl.style.display = 'block';
-        }
-    });
-    character.addEventListener('mouseleave', function() {
-        this.classList.remove('color-pink', 'color-orange', 'color-sky', 'color-green');
-        if (previewEl) {
-            previewEl.style.display = 'none';
-            previewEl.removeAttribute('src');
-        }
-    });
+            const nameEl = this.querySelector('.face-name');
+            const name = nameEl ? nameEl.textContent.trim() : '';
+            const src = studentImages[name];
+            if (previewEl && src) {
+                previewEl.src = encodeURI(src);
+                previewEl.style.display = 'block';
+            }
+        });
+        character.addEventListener('mouseleave', function() {
+            this.classList.remove('color-pink', 'color-orange', 'color-sky', 'color-green');
+            if (previewEl) {
+                previewEl.style.display = 'none';
+                previewEl.removeAttribute('src');
+            }
+        });
 
-    // Click to navigate to student page
-    character.addEventListener('click', function() {
-        window.location.href = `student.html?student=${index}`;
+        // Click to navigate to student page
+        character.addEventListener('click', function() {
+            window.location.href = `student.html?student=${index}`;
+        });
     });
-});
+}
 
 // Pupil movement following cursor (+ subtle random contract/expand on move)
 let lastPupilScaleUpdate = 0;
@@ -119,12 +124,14 @@ function updatePupilPositions() {
 }
 
 // Initialize pupil positions on load
-window.addEventListener('load', () => {
-    // Set initial mouse position to center of screen
-    mouseX = window.innerWidth / 2;
-    mouseY = window.innerHeight / 2;
-    updatePupilPositions();
-});
+if (!mobileLandingQuery.matches) {
+    window.addEventListener('load', () => {
+        // Set initial mouse position to center of screen
+        mouseX = window.innerWidth / 2;
+        mouseY = window.innerHeight / 2;
+        updatePupilPositions();
+    });
+}
 
 function setResponsiveScale() {
     if (window.matchMedia('(max-width: 768px)').matches) {
@@ -148,7 +155,7 @@ function setResponsiveScale() {
 setResponsiveScale();
 window.addEventListener('resize', () => {
     setResponsiveScale();
-    updatePupilPositions();
+    if (!mobileLandingQuery.matches) updatePupilPositions();
 });
 
 // Smooth scroll behavior
@@ -175,45 +182,47 @@ Object.keys(projectLinks).forEach(cardId => {
 });
 
 // Glitch effect for text
-const glitchTexts = document.querySelectorAll('.glitch-text');
-const glitchChars = '#$%^&*!@~+-=<>?/|\\';
+if (!mobileLandingQuery.matches) {
+    const glitchTexts = document.querySelectorAll('.glitch-text');
+    const glitchChars = '#$%^&*!@~+-=<>?/|\\';
 
-glitchTexts.forEach(glitchText => {
-    const originalText = glitchText.textContent;
+    glitchTexts.forEach(glitchText => {
+        const originalText = glitchText.textContent;
 
-    function glitchEffect() {
-        let iterations = 0;
-        const maxIterations = 8;
+        function glitchEffect() {
+            let iterations = 0;
+            const maxIterations = 8;
 
-        const interval = setInterval(() => {
-            glitchText.textContent = originalText
-                .split('')
-                .map((char, index) => {
-                    if (char === ' ') return ' ';
-                    if (iterations < maxIterations && Math.random() < 0.4) {
-                        return glitchChars[Math.floor(Math.random() * glitchChars.length)];
-                    }
-                    return originalText[index];
-                })
-                .join('');
+            const interval = setInterval(() => {
+                glitchText.textContent = originalText
+                    .split('')
+                    .map((char, index) => {
+                        if (char === ' ') return ' ';
+                        if (iterations < maxIterations && Math.random() < 0.4) {
+                            return glitchChars[Math.floor(Math.random() * glitchChars.length)];
+                        }
+                        return originalText[index];
+                    })
+                    .join('');
 
-            iterations++;
+                iterations++;
 
-            if (iterations >= maxIterations) {
-                clearInterval(interval);
-                glitchText.textContent = originalText;
-            }
-        }, 60);
-    }
+                if (iterations >= maxIterations) {
+                    clearInterval(interval);
+                    glitchText.textContent = originalText;
+                }
+            }, 60);
+        }
 
-    // Run glitch effect continuously every 1.5-2.5 seconds
-    setInterval(() => {
-        glitchEffect();
-    }, Math.random() * 1000 + 1500);
-});
+        // Run glitch effect continuously every 1.5-2.5 seconds
+        setInterval(() => {
+            glitchEffect();
+        }, Math.random() * 1000 + 1500);
+    });
+}
 
 (function renderMobileGallery() {
-    const mobileQuery = window.matchMedia('(max-width: 768px)');
+    const mobileQuery = mobileLandingQuery;
     if (!mobileQuery.matches) {
         const renderAfterResize = (event) => {
             if (event.matches) window.location.reload();
@@ -394,7 +403,17 @@ glitchTexts.forEach(glitchText => {
         }
     }
 
-    shuffleMobileImages(mobileImages).forEach((imgPath, index) => {
+    let activeMobileItem = null;
+
+    function setActiveMobileItem(nextItem) {
+        if (activeMobileItem && activeMobileItem !== nextItem) {
+            activeMobileItem.classList.remove('active');
+        }
+        activeMobileItem = nextItem;
+        if (activeMobileItem) activeMobileItem.classList.add('active');
+    }
+
+    function createMobileItem(imgPath, index) {
         const item = document.createElement('div');
         item.className = 'mobile-student-item';
 
@@ -412,6 +431,10 @@ glitchTexts.forEach(glitchText => {
         } else {
             media.alt = `Image ${index + 1}`;
             media.loading = 'lazy';
+            media.decoding = 'async';
+            if ('fetchPriority' in media) {
+                media.fetchPriority = index < 6 ? 'high' : 'low';
+            }
         }
 
         const koreanName = extractMobileKoreanName(imgPath);
@@ -421,31 +444,59 @@ glitchTexts.forEach(glitchText => {
         name.className = 'mobile-student-name';
         name.textContent = englishName;
 
-        item.addEventListener('mouseenter', () => {
-            item.classList.add('active');
+        item.addEventListener('pointerenter', () => {
+            setActiveMobileItem(item);
         });
 
-        item.addEventListener('mouseleave', () => {
-            item.classList.remove('active');
+        item.addEventListener('pointerleave', () => {
+            if (activeMobileItem === item) setActiveMobileItem(null);
         });
 
         item.addEventListener('click', (event) => {
             event.stopPropagation();
-            document.querySelectorAll('.mobile-student-item.active').forEach((activeItem) => {
-                if (activeItem !== item) activeItem.classList.remove('active');
-            });
-            item.classList.toggle('active');
+            const shouldActivate = activeMobileItem !== item;
+            setActiveMobileItem(shouldActivate ? item : null);
         });
 
         item.appendChild(media);
         item.appendChild(name);
-        mobileGallery.appendChild(item);
         if (media.tagName === 'VIDEO') playVideoWhenVisible(media);
-    });
+        return item;
+    }
 
-    document.addEventListener('click', () => {
-        document.querySelectorAll('.mobile-student-item.active').forEach((item) => {
-            item.classList.remove('active');
-        });
+    const shuffledMobileImages = shuffleMobileImages(mobileImages);
+    let nextMobileImageIndex = 0;
+
+    function scheduleMobileBatch(callback) {
+        if ('requestIdleCallback' in window) {
+            window.requestIdleCallback(callback, { timeout: 180 });
+        } else {
+            window.setTimeout(callback, 45);
+        }
+    }
+
+    function appendMobileBatch(batchSize) {
+        const fragment = document.createDocumentFragment();
+        const end = Math.min(nextMobileImageIndex + batchSize, shuffledMobileImages.length);
+
+        for (; nextMobileImageIndex < end; nextMobileImageIndex++) {
+            fragment.appendChild(createMobileItem(
+                shuffledMobileImages[nextMobileImageIndex],
+                nextMobileImageIndex
+            ));
+        }
+
+        mobileGallery.appendChild(fragment);
+
+        if (nextMobileImageIndex < shuffledMobileImages.length) {
+            scheduleMobileBatch(() => appendMobileBatch(8));
+        }
+    }
+
+    appendMobileBatch(12);
+
+    document.addEventListener('click', (event) => {
+        if (event.target.closest('.mobile-student-item')) return;
+        setActiveMobileItem(null);
     });
 })();
