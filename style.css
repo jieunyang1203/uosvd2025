@@ -467,8 +467,6 @@ body {
         max-width: clamp(280px, 80vw, 450px);
         cursor: pointer;
         contain: layout paint style;
-        content-visibility: auto;
-        contain-intrinsic-size: 360px;
         touch-action: manipulation;
     }
 
