@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapping Your Time</title>
+    <link rel="stylesheet" href="project-style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+</head>
+<body>
+    <div id="background-canvas"></div>
+
+    <!-- Project title (top-left) -->
+    <div class="project-title">Mapping Your Time</div>
+    <!-- Home Logo -->
+    <div class="home-logo" id="home-button">
+        HOME
+    </div>
+
+    <!-- Archive navigation arrows -->
+    <div class="nav-arrow" id="next-page">
+        <img src="arrow2.svg" alt="Next">
+    </div>
+    <div class="prev-arrow" id="prev-page">
+        <img src="arrow2.svg" alt="Previous">
+    </div>
+
+    <!-- Gallery Container -->
+    <div class="gallery-container" id="gallery"></div>
+
+    <script>
+        const images = [
+            { src: 'map/신기준map.png', name: 'Kijoone Shin' },
+            { src: 'map/장혜원map.png', name: 'Hyewon Jang' },
+            { src: 'map/이혜원map.png', name: 'Hyewon Lee' },
+            { src: 'map/박지우map.jpg', name: 'Jiwoo Park' },
+            { src: 'map/박지혜map.png', name: 'Jihye Park' },
+            { src: 'map/최문형map.png', name: 'Moonhyung Choi' },
+            { src: 'map/류시완map.jpg', name: 'Siwan Ryu' },
+            { src: 'map/권민서map.png', name: 'Minseo Kwon' },
+            { src: 'map/이소민map.png', name: 'Somin Lee' },
+            { src: 'map/이한나map.png', name: 'Hanna Lee' },
+            { src: 'map/박성수map.png', name: 'Sungsu Park' },
+            { src: 'map/서정민map.png', name: 'Jungmin Seo' },
+            { src: 'map/한서원map.png', name: 'Seowon Han' }
+        ];
+
+        // Shuffle array
+        function shuffleArray(array) {
+            const shuffled = [...array];
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            return shuffled;
+        }
+
+        // Render gallery
+        const shuffledImages = shuffleArray(images);
+        const gallery = document.getElementById('gallery');
+        const studentOrder = ['강민석','권민서','노희지','류시완','박성수','박지우','박지혜','서정민','신기준','양지은','유성헌','윤다경','윤자영','이정은','이소민','이시네','이한나','이혜원','임채영','장민지','장혜원','전소영','최문형','한서원'];
+        function studentIndexFromSrc(src) {
+            const file = src.split('/').pop();
+            const m = file.match(/[\uAC00-\uD7A3]+/);
+            return m ? studentOrder.indexOf(m[0]) : -1;
+        }
+
+        shuffledImages.forEach((item, index) => {
+            const div = document.createElement('div');
+            div.className = 'gallery-item';
+            div.style.opacity = '0';
+            div.style.animation = `fadeIn 0.6s ease-out forwards`;
+            div.style.animationDelay = `${index * 0.1}s`;
+
+            const img = document.createElement('img');
+            img.src = item.src;
+            img.alt = 'Mapping Your Time';
+
+            const nameSpan = document.createElement('span');
+            nameSpan.className = 'student-name';
+            nameSpan.textContent = item.name;
+
+            div.appendChild(img);
+            div.appendChild(nameSpan);
+
+            const _sIdx = studentIndexFromSrc(item.src);
+            if (_sIdx >= 0) {
+                div.style.cursor = 'pointer';
+                div.addEventListener('click', () => {
+                    window.location.href = `student.html?student=${_sIdx}`;
+                });
+            }
+            gallery.appendChild(div);
+        });
+
+        // Home button navigation
+        document.getElementById('home-button').addEventListener('click', () => {
+            window.location.href = 'index.html';
+        });
+    </script>
+    <script>
+        (function () {
+            const archive = ['show-all.html','generative-system.html','shape-poster.html','self-identity.html','collected-book.html','mapping-your-time.html'];
+            let i = archive.indexOf(location.pathname.split('/').pop());
+            if (i < 0) i = 0;
+            const next = archive[(i + 1) % archive.length];
+            const prev = archive[(i - 1 + archive.length) % archive.length];
+            const nb = document.getElementById('next-page');
+            const pb = document.getElementById('prev-page');
+            if (nb) nb.addEventListener('click', function () { location.href = next; });
+            if (pb) pb.addEventListener('click', function () { location.href = prev; });
+            document.addEventListener('keydown', function (e) {
+                if (document.querySelector('.image-modal.active')) return;
+                if (e.key === 'ArrowRight') location.href = next;
+                else if (e.key === 'ArrowLeft') location.href = prev;
+            });
+        })();
+    </script>
+    <script src="background.js"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shape Poster</title>
+    <link rel="stylesheet" href="project-style.css">
+    <style>
+        .smaller-image img,
+        .smaller-image video {
+            transform: scale(0.85);
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+</head>
+<body>
+    <div id="background-canvas"></div>
+
+    <!-- Project title (top-left) -->
+    <div class="project-title">Shape Poster</div>
+    <!-- Home Logo -->
+    <div class="home-logo" id="home-button">
+        HOME
+    </div>
+
+    <!-- Archive navigation arrows -->
+    <div class="nav-arrow" id="next-page">
+        <img src="arrow2.svg" alt="Next">
+    </div>
+    <div class="prev-arrow" id="prev-page">
+        <img src="arrow2.svg" alt="Previous">
+    </div>
+
+    <!-- Gallery Container -->
+    <div class="gallery-container" id="gallery"></div>
+
+    <script>
+        const images = [
+            { src: 'shape/권민서shape.png', name: 'Minseo Kwon' },
+            { src: 'shape/박성수shape.png', name: 'Sungsu Park' },
+            { src: 'shape/박지혜shape.png', name: 'Jihye Park' },
+            { src: 'shape/박지우shape.jpg', name: 'Jiwoo Park' },
+            { src: 'shape/신기준shape.png', name: 'Kijoone Shin' },
+            { src: 'shape/이소민shape.png', name: 'Somin Lee' },
+            { src: 'shape/이한나shape.png', name: 'Hanna Lee' },
+            { src: 'shape/장민지shape.png', name: 'Minji Jang' },
+            { src: 'shape/장혜원shape.png', name: 'Hyewon Jang' },
+            { src: 'shape/최문형shape.png', name: 'Moonhyung Choi' },
+            { src: 'shape/한서원shape.png', name: 'Seowon Han' },
+            { src: 'shape/서정민shape.png', name: 'Jungmin Seo' },
+            { src: 'shape/이혜원shape.png', name: 'Hyewon Lee' },
+            { src: 'shape/류시완shape.mp4', name: 'Siwan Ryu', smaller: true },
+            { src: 'shape/이시네shape.png', name: 'Shine Lee' }
+        ];
+
+        // Shuffle array
+        function shuffleArray(array) {
+            const shuffled = [...array];
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            return shuffled;
+        }
+
+        // Render gallery
+        const shuffledImages = shuffleArray(images);
+        const gallery = document.getElementById('gallery');
+        const studentOrder = ['강민석','권민서','노희지','류시완','박성수','박지우','박지혜','서정민','신기준','양지은','유성헌','윤다경','윤자영','이정은','이소민','이시네','이한나','이혜원','임채영','장민지','장혜원','전소영','최문형','한서원'];
+        function studentIndexFromSrc(src) {
+            const file = src.split('/').pop();
+            const m = file.match(/[\uAC00-\uD7A3]+/);
+            return m ? studentOrder.indexOf(m[0]) : -1;
+        }
+        function playVideoWhenVisible(video) {
+            let isVisible = false;
+            const play = () => {
+                if (isVisible) video.play().catch(() => {});
+            };
+            video.addEventListener('loadeddata', play);
+            video.addEventListener('canplay', play);
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        isVisible = entry.isIntersecting;
+                        if (isVisible) play();
+                        else video.pause();
+                    });
+                }, { threshold: 0.1 });
+                observer.observe(video);
+            } else {
+                isVisible = true;
+                play();
+            }
+        }
+
+        shuffledImages.forEach((item, index) => {
+            const div = document.createElement('div');
+            div.className = 'gallery-item';
+            if (item.smaller) div.classList.add('smaller-image');
+            div.style.opacity = '0';
+            div.style.animation = `fadeIn 0.6s ease-out forwards`;
+            div.style.animationDelay = `${index * 0.1}s`;
+
+            const media = document.createElement(item.src.endsWith('.mp4') ? 'video' : 'img');
+            media.src = item.src;
+            if (media.tagName === 'VIDEO') {
+                media.autoplay = true;
+                media.muted = true;
+                media.loop = true;
+                media.playsInline = true;
+                media.setAttribute('playsinline', '');
+                media.setAttribute('webkit-playsinline', '');
+                media.preload = 'metadata';
+                media.setAttribute('aria-label', 'Shape Poster');
+            } else {
+                media.alt = 'Shape Poster';
+            }
+
+            const nameSpan = document.createElement('span');
+            nameSpan.className = 'student-name';
+            nameSpan.textContent = item.name;
+
+            div.appendChild(media);
+            div.appendChild(nameSpan);
+            if (media.tagName === 'VIDEO') playVideoWhenVisible(media);
+
+            const _sIdx = studentIndexFromSrc(item.src);
+            if (_sIdx >= 0) {
+                div.style.cursor = 'pointer';
+                div.addEventListener('click', () => {
+                    window.location.href = `student.html?student=${_sIdx}`;
+                });
+            }
+            gallery.appendChild(div);
+        });
+
+        // Home button navigation
+        document.getElementById('home-button').addEventListener('click', () => {
+            window.location.href = 'index.html';
+        });
+    </script>
+    <script>
+        (function () {
+            const archive = ['show-all.html','generative-system.html','shape-poster.html','self-identity.html','collected-book.html','mapping-your-time.html'];
+            let i = archive.indexOf(location.pathname.split('/').pop());
+            if (i < 0) i = 0;
+            const next = archive[(i + 1) % archive.length];
+            const prev = archive[(i - 1 + archive.length) % archive.length];
+            const nb = document.getElementById('next-page');
+            const pb = document.getElementById('prev-page');
+            if (nb) nb.addEventListener('click', function () { location.href = next; });
+            if (pb) pb.addEventListener('click', function () { location.href = prev; });
+            document.addEventListener('keydown', function (e) {
+                if (document.querySelector('.image-modal.active')) return;
+                if (e.key === 'ArrowRight') location.href = next;
+                else if (e.key === 'ArrowLeft') location.href = prev;
+            });
+        })();
+    </script>
+    <script src="background.js"></script>
+</body>
+</html>

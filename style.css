@@ -1,0 +1,497 @@
+@font-face {
+    font-family: 'Pretendard';
+    src: url('Pretendard-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MaxiSharp';
+    src: url('ABCMaxiSharpMonoVariable-Trial.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+:root {
+    --s: 1;
+    --pile-s: 0.85;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F3F3F3;
+    font-family: 'Pretendard', sans-serif;
+    overflow-x: hidden;
+    overflow-y: auto;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Responsive design canvas: elements scale down on narrower desktop windows
+   so the right-side pile stays inside the viewport and clear of the divider. */
+.stage {
+    position: relative;
+    width: 100vw;
+    max-width: 100%;
+    height: 100vh;
+    min-height: 760px;
+    overflow: hidden;
+}
+
+#background-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+#background-canvas canvas {
+    z-index: 1 !important;
+    pointer-events: none;
+}
+
+.mobile-view {
+    display: none;
+}
+
+/* ===== Divider (single thick vertical line) ===== */
+.divider-v {
+    position: absolute;
+    top: 20px;
+    left: 25%;
+    width: 5px;
+    bottom: 20px;
+    background-color: #000000;
+    z-index: 25;
+}
+
+/* ===== Header (top-left): logo + brand ===== */
+.logo-mark {
+    position: absolute;
+    left: 36px;
+    top: 28px;
+    width: calc(195px * var(--s));
+    aspect-ratio: 2 / 1;
+    background-image: url('logo.svg');
+    background-size: contain;
+    background-position: left top;
+    background-repeat: no-repeat;
+    z-index: 20;
+    pointer-events: none;
+}
+
+.brand {
+    position: absolute;
+    top: 40px;
+    left: 248px;
+    font-family: 'MaxiSharp', monospace;
+    font-size: calc(16px * var(--s));
+    line-height: 1.35;
+    color: #000000;
+    letter-spacing: 0.5px;
+    z-index: 30;
+}
+
+/* ===== Top Menu (right panel, sits along the top) ===== */
+.top-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 130px;
+    z-index: 30;
+    pointer-events: none;
+}
+
+.school-logo {
+    position: absolute;
+    top: 40px;
+    left: 28.5%;
+    width: calc(60px * var(--s));
+    height: calc(30px * var(--s));
+    background-image: url('school.svg');
+    background-size: contain;
+    background-position: left center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+.menu-item {
+    position: absolute;
+    top: 38px;
+    cursor: pointer;
+    pointer-events: auto;
+    font-family: 'MaxiSharp', monospace;
+    font-size: calc(17px * var(--s));
+    line-height: 1.5;
+    color: #000000;
+}
+
+.menu-item .hl {
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    padding: 2px 7px;
+}
+
+.m-showall   { left: 39.5%; }
+.m-generative{ left: 49.3%; }
+.m-shape     { left: 59.1%; }
+.m-self      { left: 68.9%; }
+.m-collected { left: 78.7%; }
+.m-map       { left: 88.5%; }
+
+.m-showall   .hl { background-color: #FF16FC; }
+.m-generative .hl { background-color: #FFA301; }
+.m-shape     .hl { background-color: #D4D4D4; }
+.m-self      .hl { background-color: #94A6FF; }
+.m-collected .hl { background-color: #03FF00; }
+.m-map       .hl { background-color: #FF16FC; }
+
+/* ===== Student work preview (left panel) ===== */
+.student-preview {
+    position: absolute;
+    left: 36px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: calc(25% - 72px);
+    max-height: 58vh;
+    object-fit: contain;
+    object-position: center;
+    display: none;
+    z-index: 15;
+    pointer-events: none;
+}
+
+/* ===== Site description (bottom-left) ===== */
+.site-desc {
+    position: absolute;
+    left: 40px;
+    bottom: 36px;
+    font-family: 'Pretendard', sans-serif;
+    font-size: calc(15px * var(--s));
+    line-height: 1.55;
+    color: #000000;
+    z-index: 20;
+}
+
+
+/* Characters placed on the exact coordinate system exported from face.svg
+   (viewBox 1234 x 548), scaled and anchored to the bottom-right. */
+.characters-pile {
+    position: absolute;
+    right: 1%;
+    bottom: 3%;
+    width: 1350px;
+    height: 626px;
+    transform: scale(var(--pile-s));
+    transform-origin: bottom right;
+    z-index: 10;
+}
+
+.character {
+    background-color: #A8A8A8;
+    border-radius: 0; /* No border radius - rectangular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+    position: absolute;
+    margin: 0;
+    --rot: 0deg;
+    animation: wobble 2.4s ease-in-out infinite;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+@keyframes wobble {
+    0%, 100% { transform: translateY(0px) rotate(var(--rot, 0deg)); }
+    40% { transform: translateY(0px) rotate(var(--rot, 0deg)); }
+    50% { transform: translateY(-5px) rotate(var(--rot, 0deg)); }
+    60% { transform: translateY(0px) rotate(var(--rot, 0deg)); }
+}
+
+/* Irregular jump on hover (varying heights, not too regular) */
+@keyframes hoverJump {
+    0%   { transform: translateY(0) rotate(var(--rot, 0deg)); animation-timing-function: ease-out; }
+    14%  { transform: translateY(-18px) rotate(var(--rot, 0deg)); animation-timing-function: ease-in; }  /* high */
+    28%  { transform: translateY(0) rotate(var(--rot, 0deg)); animation-timing-function: ease-out; }
+    40%  { transform: translateY(-6px) rotate(var(--rot, 0deg)); animation-timing-function: ease-in; }   /* small */
+    52%  { transform: translateY(0) rotate(var(--rot, 0deg)); animation-timing-function: ease-out; }
+    66%  { transform: translateY(-13px) rotate(var(--rot, 0deg)); animation-timing-function: ease-in; }  /* medium */
+    78%  { transform: translateY(0) rotate(var(--rot, 0deg)); animation-timing-function: ease-out; }
+    88%  { transform: translateY(-9px) rotate(var(--rot, 0deg)); animation-timing-function: ease-in; }   /* small-medium */
+    100% { transform: translateY(0) rotate(var(--rot, 0deg)); }
+}
+
+.character:hover {
+    z-index: 30;
+    animation: hoverJump 1.1s ease-in-out infinite;
+}
+
+/* Different animation delays for each character */
+.char-1 { animation-delay: 0s; }
+.char-2 { animation-delay: 0.1s; }
+.char-3 { animation-delay: 0.2s; }
+.char-4 { animation-delay: 0.3s; }
+.char-5 { animation-delay: 0.4s; }
+.char-6 { animation-delay: 0.5s; }
+.char-7 { animation-delay: 0.6s; }
+.char-8 { animation-delay: 0.7s; }
+.char-9 { animation-delay: 0.8s; }
+.char-10 { animation-delay: 0.9s; }
+.char-11 { animation-delay: 1s; }
+.char-12 { animation-delay: 1.1s; }
+.char-13 { animation-delay: 1.2s; }
+.char-14 { animation-delay: 1.3s; }
+.char-15 { animation-delay: 1.4s; }
+.char-16 { animation-delay: 1.5s; }
+.char-17 { animation-delay: 1.6s; }
+.char-18 { animation-delay: 1.7s; }
+.char-19 { animation-delay: 1.8s; }
+.char-20 { animation-delay: 1.9s; }
+.char-21 { animation-delay: 2s; }
+.char-22 { animation-delay: 2.1s; }
+.char-23 { animation-delay: 2.2s; }
+.char-24 { animation-delay: 2.3s; }
+
+/* Student name shown inside the face on hover */
+.face-name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    color: #000000;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* On hover: face changes color (added by JS), eyes vanish, name appears */
+.character:hover .eyes {
+    opacity: 0;
+}
+.character:hover .face-name {
+    opacity: 1;
+}
+
+/* Random hover colors (the four menu palette colors) */
+.character.color-pink   { background-color: #FF16FC !important; }
+.character.color-orange { background-color: #FFA301 !important; }
+.character.color-sky    { background-color: #94A6FF !important; }
+.character.color-green  { background-color: #03FF00 !important; }
+
+/* Exact positions/sizes/angles from face3.svg (px in the 1350x626 system).
+   Order = top-to-bottom, left-to-right, so names fall in ㄱㄴㄷ order. */
+.char-1  { left: 330.8px;  top: 53.3px;  width: 166.0px; height: 94.0px;  --rot: 8.15deg; }   /* 강민석 */
+.char-2  { left: 735.1px;  top: 5.1px;   width: 167.5px; height: 98.3px;  --rot: 3.53deg; }   /* 권민서 */
+.char-3  { left: 949.2px;  top: 7.0px;   width: 147.0px; height: 128.0px; --rot: 0deg; }      /* 노희지 */
+.char-4  { left: 547.2px;  top: 101.0px; width: 166.0px; height: 94.0px;  --rot: 0deg; }      /* 류시완 */
+.char-5  { left: 760.8px;  top: 141.6px; width: 147.9px; height: 137.4px; --rot: 0.06deg; }   /* 박성수 */
+.char-6  { left: 171.2px;  top: 171.0px; width: 148.0px; height: 129.0px; --rot: 0deg; }      /* 박지우 */
+.char-7  { left: 367.4px;  top: 181.5px; width: 149.1px; height: 130.4px; --rot: 11.66deg; }  /* 박지혜 */
+.char-8  { left: 555.2px;  top: 229.0px; width: 168.0px; height: 101.0px; --rot: 0deg; }      /* 서정민 */
+.char-9  { left: 948.2px;  top: 166.0px; width: 149.0px; height: 140.0px; --rot: 0deg; }      /* 신기준 */
+.char-10 { left: 1132.2px; top: 195.0px; width: 166.0px; height: 111.0px; --rot: 0deg; }      /* 양지은 */
+.char-11 { left: 2.5px;    top: 358.2px; width: 166.5px; height: 94.6px;  --rot: -3.12deg; }  /* 유성현 */
+.char-12 { left: 190.2px;  top: 325.0px; width: 148.0px; height: 128.0px; --rot: 0deg; }      /* 윤다경 */
+.char-13 { left: 359.2px;  top: 355.0px; width: 168.0px; height: 98.0px;  --rot: 0deg; }      /* 윤자영 */
+.char-14 { left: 545.2px;  top: 378.0px; width: 206.0px; height: 87.0px;  --rot: 0deg; }      /* 이정은 */
+.char-15 { left: 773.3px;  top: 325.0px; width: 148.0px; height: 128.4px; --rot: -6.56deg; }  /* 이소민 */
+.char-16 { left: 954.6px;  top: 352.5px; width: 164.6px; height: 98.3px;  --rot: -7.47deg; }  /* 이시네 */
+.char-17 { left: 1143.2px; top: 378.0px; width: 206.0px; height: 75.0px;  --rot: 0deg; }      /* 이한나 */
+.char-18 { left: 55.2px;   top: 503.0px; width: 205.0px; height: 95.0px;  --rot: 0deg; }      /* 이혜원 */
+.char-19 { left: 281.2px;  top: 497.0px; width: 166.0px; height: 101.0px; --rot: 0deg; }      /* 임채영 */
+.char-20 { left: 471.1px;  top: 488.5px; width: 147.0px; height: 130.4px; --rot: 5.78deg; }   /* 장민지 */
+.char-21 { left: 640.2px;  top: 519.0px; width: 164.0px; height: 99.0px;  --rot: 0deg; }      /* 장혜원 */
+.char-22 { left: 826.2px;  top: 489.0px; width: 148.0px; height: 109.0px; --rot: 0deg; }      /* 전소영 */
+.char-23 { left: 994.2px;  top: 489.0px; width: 149.0px; height: 129.0px; --rot: 0deg; }      /* 최문형 */
+.char-24 { left: 1163.2px; top: 519.0px; width: 165.0px; height: 79.0px;  --rot: 0deg; }      /* 한서원 */
+
+/* Eyes - Rectangular, no border-radius */
+.eyes {
+    display: flex;
+    gap: 20px;
+    position: relative;
+}
+
+.eye {
+    width: 36px;
+    height: 30px;
+    background-color: #FFFFFF;
+    border-radius: 0; /* Rectangular eyes */
+    position: relative;
+    overflow: hidden;
+}
+
+.pupil {
+    width: 20px;
+    height: 20px;
+    background-color: #000000;
+    border-radius: 0; /* Rectangular pupils */
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease-out, border-radius 0.35s ease;
+}
+
+/* Varied eye spacing; vertical offset kept small so eyes stay inside faces */
+.char-1 .eyes { gap: 15px; margin-top: 2px; }
+.char-2 .eyes { gap: 32px; margin-top: 8px; }
+.char-3 .eyes { gap: 18px; margin-top: 4px; }
+.char-4 .eyes { gap: 28px; margin-top: 6px; }
+.char-5 .eyes { gap: 20px; margin-top: 2px; }
+.char-6 .eyes { gap: 35px; margin-top: 7px; }
+.char-7 .eyes { gap: 16px; margin-top: 3px; }
+.char-8 .eyes { gap: 30px; margin-top: 5px; }
+.char-9 .eyes { gap: 22px; margin-top: 8px; }
+.char-10 .eyes { gap: 26px; margin-top: 1px; }
+.char-11 .eyes { gap: 17px; margin-top: 5px; }
+.char-12 .eyes { gap: 25px; margin-top: 7px; }
+.char-13 .eyes { gap: 19px; margin-top: 6px; }
+.char-14 .eyes { gap: 33px; margin-top: 2px; }
+.char-15 .eyes { gap: 21px; margin-top: 9px; }
+.char-16 .eyes { gap: 29px; margin-top: 3px; }
+.char-17 .eyes { gap: 16px; margin-top: 8px; }
+.char-18 .eyes { gap: 24px; margin-top: 2px; }
+.char-19 .eyes { gap: 34px; margin-top: 9px; }
+.char-20 .eyes { gap: 18px; margin-top: 3px; }
+.char-21 .eyes { gap: 27px; margin-top: 6px; }
+.char-22 .eyes { gap: 20px; margin-top: 2px; }
+.char-23 .eyes { gap: 31px; margin-top: 8px; }
+.char-24 .eyes { gap: 23px; margin-top: 5px; }
+
+/* Eyes - bigger and horizontally longer, with wide pupils */
+.eye { width: 52px; height: 32px; }
+.pupil { width: 34px; height: 26px; }
+
+/* Per-character pupil variation - varied, wide */
+.char-1 .pupil  { width: 32px; height: 24px; }
+.char-2 .pupil  { width: 28px; height: 28px; } /* square */
+.char-3 .pupil  { width: 30px; height: 22px; }
+.char-4 .pupil  { width: 33px; height: 26px; }
+.char-5 .pupil  { width: 25px; height: 25px; } /* square */
+.char-6 .pupil  { width: 34px; height: 28px; }
+.char-7 .pupil  { width: 31px; height: 21px; }
+.char-8 .pupil  { width: 27px; height: 27px; } /* square */
+.char-9 .pupil  { width: 32px; height: 24px; }
+.char-10 .pupil { width: 34px; height: 25px; }
+.char-11 .pupil { width: 26px; height: 26px; } /* square */
+.char-12 .pupil { width: 31px; height: 23px; }
+.char-13 .pupil { width: 33px; height: 22px; }
+.char-14 .pupil { width: 28px; height: 28px; } /* square */
+.char-15 .pupil { width: 30px; height: 23px; }
+.char-16 .pupil { width: 36px; height: 25px; }
+.char-17 .pupil { width: 21px; height: 21px; } /* square */
+.char-18 .pupil { width: 34px; height: 27px; }
+.char-19 .pupil { width: 33px; height: 25px; }
+.char-20 .pupil { width: 28px; height: 28px; } /* square */
+.char-21 .pupil { width: 33px; height: 24px; }
+.char-22 .pupil { width: 34px; height: 26px; }
+.char-23 .pupil { width: 22px; height: 22px; } /* square */
+.char-24 .pupil { width: 36px; height: 28px; }
+
+@media (max-width: 768px) {
+    body {
+        background-color: #F3F3F3;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+
+    .stage {
+        display: none;
+    }
+
+    .mobile-view {
+        display: block;
+        position: relative;
+        min-height: 100vh;
+    }
+
+    .mobile-logo {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: clamp(150px, 42vw, 200px);
+        aspect-ratio: 320 / 183;
+        transform: translate(-50%, -50%);
+        z-index: 10000;
+        pointer-events: none;
+        background-color: #FFFFFF;
+        -webkit-mask-image: url('logo.svg');
+        mask-image: url('logo.svg');
+        -webkit-mask-position: center;
+        mask-position: center;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        mix-blend-mode: exclusion;
+    }
+
+    .mobile-students-container {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: clamp(15px, 3vw, 25px);
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: clamp(20px, 5vw, 40px) clamp(15px, 3vw, 20px);
+    }
+
+    .mobile-student-item {
+        position: relative;
+        width: 95vw;
+        max-width: clamp(280px, 80vw, 450px);
+        cursor: pointer;
+    }
+
+    .mobile-student-item img,
+    .mobile-student-item video {
+        display: block;
+        width: 100%;
+        height: auto;
+        transition: filter 0.3s ease;
+    }
+
+    .mobile-student-item.active img,
+    .mobile-student-item.active video,
+    .mobile-student-item:active img,
+    .mobile-student-item:active video {
+        filter: blur(5px);
+    }
+
+    .mobile-student-name {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #FFFFFF;
+        font-family: 'MaxiSharp', monospace;
+        font-size: clamp(12px, 2vw, 14px);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+        white-space: nowrap;
+        text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.3);
+    }
+
+    .mobile-student-item.active .mobile-student-name,
+    .mobile-student-item:active .mobile-student-name {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과제전</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+</head>
+<body>
+    <div id="background-canvas"></div>
+
+    <div class="stage">
+
+    <!-- Vertical divider -->
+    <div class="divider-v"></div>
+
+    <!-- Header: logo + brand (top-left) -->
+    <div class="logo-mark"></div>
+    <div class="brand">
+        <span class="glitch-text">UOSVD</span> <span class="glitch-text">VISUAL</span><br>
+        <span class="glitch-text">DESIGN</span> <span class="glitch-text">1&amp;2</span>
+    </div>
+
+    <!-- Top Menu (right panel) -->
+    <nav class="top-menu">
+        <div class="school-logo"></div>
+        <div class="menu-item m-showall card-1" data-svg="showall"><span class="hl">Show All</span></div>
+        <div class="menu-item m-generative card-6-group" data-svg="generative"><span class="hl">Generative<br>System</span></div>
+        <div class="menu-item m-shape card-5" data-svg="shape"><span class="hl">Shape Poster</span></div>
+        <div class="menu-item m-self card-8-group" data-svg="self"><span class="hl">Self-<br>Identity</span></div>
+        <div class="menu-item m-collected card-3-group" data-svg="collected"><span class="hl">Collected<br>book</span></div>
+        <div class="menu-item m-map card-2-group" data-svg="map"><span class="hl">Mapping<br>Your Time</span></div>
+    </nav>
+
+    <!-- Student work preview (left panel, shown on character hover) -->
+    <img class="student-preview" id="student-preview" alt="">
+
+    <!-- Site description (bottom-left) -->
+    <div class="site-desc">2025년도 서울시립대학교 디자인학과 시각디자인 1&amp;2 <br>수업 결과물을 아카이빙한 웹사이트입니다.</div>
+
+    <!-- Student characters piled on the right -->
+    <div class="characters-pile">
+        <div class="character char-1">
+            <div class="eyes"><div class="eye left-eye"><div class="pupil"></div></div><div class="eye right-eye"><div class="pupil"></div></div></div>
+            <div class="face-name">강민석</div>
+        </div>
+        <div class="character char-2">
+            <div class="eyes"><div class="eye left-eye"><div class="pupil"></div></div><div class="eye right-eye"><div class="pupil"></div></div></div>
+            <div class="face-name">권민서</div>
+        </div>
+        <div class="character char-3">
+            <div class="eyes"><div class="eye left-eye"><div class="pupil"></div></div><div class="eye right-eye"><div class="pupil"></div></div></div>
+            <div class="face-name">노희지</div>
+        </div>
+        <div class="character char-4">
+            <div class="eyes"><div class="eye left-eye"><div class="pupil"></div></div><div class="eye right-eye"><div class="pupil"></div></div></div>
+            <div class="face-name">류시완</div>
+        </div>
+        <div class="character char-5">
+            <div class="eyes"><div class="eye left-eye"><div class="pupil"></div></div><div class="eye right-eye"><div class="pupil"></div></div></div>
+            <div class="face-name">박성수</div>
+        </div>
+        <div class="character char-6">
+            <div class="eyes"><div class="eye left-eye"><div class="pupil"></div></div><div class="eye right-eye"><div class="pupil"></div></div></div>
+            <div class="face-name">박지우</div>
+        </div>
+        <div class="character char-7">
+            <div class="eyes"><div class="eye left-eye"><div class="pupil"></div></div><div class="eye right-eye"><div class="pupil"></div></div></div>
+            <div class="face-name">박지혜</div>
+        </div>
+        <div class="character char-8">
+            <div class="eyes"><div class="eye left-eye"><div class="pupil"></div></div><div class="eye right-eye"><div class="pupil"></div></div></div>
+            <div class="face-name">서정민</div>
+        </div>
+        <div class="character char-9">
+            <div class="eyes"><div class="eye left-eye"><div class="pupil"></div></div><div class="eye right-eye"><div class="pupil"></div></div></div>
+            <div class="face-name">신기준</div>
+        </div>
+        <div class="character char-10">
+            <div class="eyes"><div class="eye left-eye"><div class="pupil"></div></div><div class="eye right-eye"><div class="pupil"></div></div></div>
+            <div class="face-name">양지은</div>
+        </div>
+        <div class="character char-11">
+            <div class="eyes"><div class="eye left-eye"><div class="pupil"></div></div><div class="eye right-eye"><div class="pupil"></div></div></div>
+            <div class="face-name">유성헌</div>
+        </div>
+        <div class="character char-12">
+            <div class="eyes"><div class="eye left-eye"><div class="pupil"></div></div><div class="eye right-eye"><div class="pupil"></div></div></div>
+            <div class="face-name">윤다경</div>
+        </div>
+        <div class="character char-13">
+            <div class="eyes"><div class="eye left-eye"><div class="pupil"></div></div><div class="eye right-eye"><div class="pupil"></div></div></div>
+            <div class="face-name">윤자영</div>
+        </div>
+        <div class="character char-14">
+            <div class="eyes"><div class="eye left-eye"><div class="pupil"></div></div><div class="eye right-eye"><div class="pupil"></div></div></div>
+            <div class="face-name">이정은</div>
+        </div>
+        <div class="character char-15">
+            <div class="eyes"><div class="eye left-eye"><div class="pupil"></div></div><div class="eye right-eye"><div class="pupil"></div></div></div>
+            <div class="face-name">이소민</div>
+        </div>
+        <div class="character char-16">
+            <div class="eyes"><div class="eye left-eye"><div class="pupil"></div></div><div class="eye right-eye"><div class="pupil"></div></div></div>
+            <div class="face-name">이시네</div>
+        </div>
+        <div class="character char-17">
+            <div class="eyes"><div class="eye left-eye"><div class="pupil"></div></div><div class="eye right-eye"><div class="pupil"></div></div></div>
+            <div class="face-name">이한나</div>
+        </div>
+        <div class="character char-18">
+            <div class="eyes"><div class="eye left-eye"><div class="pupil"></div></div><div class="eye right-eye"><div class="pupil"></div></div></div>
+            <div class="face-name">이혜원</div>
+        </div>
+        <div class="character char-19">
+            <div class="eyes"><div class="eye left-eye"><div class="pupil"></div></div><div class="eye right-eye"><div class="pupil"></div></div></div>
+            <div class="face-name">임채영</div>
+        </div>
+        <div class="character char-20">
+            <div class="eyes"><div class="eye left-eye"><div class="pupil"></div></div><div class="eye right-eye"><div class="pupil"></div></div></div>
+            <div class="face-name">장민지</div>
+        </div>
+        <div class="character char-21">
+            <div class="eyes"><div class="eye left-eye"><div class="pupil"></div></div><div class="eye right-eye"><div class="pupil"></div></div></div>
+            <div class="face-name">장혜원</div>
+        </div>
+        <div class="character char-22">
+            <div class="eyes"><div class="eye left-eye"><div class="pupil"></div></div><div class="eye right-eye"><div class="pupil"></div></div></div>
+            <div class="face-name">전소영</div>
+        </div>
+        <div class="character char-23">
+            <div class="eyes"><div class="eye left-eye"><div class="pupil"></div></div><div class="eye right-eye"><div class="pupil"></div></div></div>
+            <div class="face-name">최문형</div>
+        </div>
+        <div class="character char-24">
+            <div class="eyes"><div class="eye left-eye"><div class="pupil"></div></div><div class="eye right-eye"><div class="pupil"></div></div></div>
+            <div class="face-name">한서원</div>
+        </div>
+    </div>
+
+    </div><!-- /.stage -->
+
+    <script src="background.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
