@@ -50,14 +50,14 @@
         isMobileLayout = window.matchMedia('(max-width: 768px)').matches;
 
         if (isMobileLayout) {
-            pixelSize = 16;
+            pixelSize = 10;
             colors = mobileColors;
             leftZoneGray = false;
-            spawnInterval = 2600;
+            spawnInterval = 620;
             spawnMin = 1;
-            spawnMax = 1;
-            maxPixels = 7;
-            targetFrameTime = 1000 / 5;
+            spawnMax = 2;
+            maxPixels = 24;
+            targetFrameTime = 1000 / 14;
         } else {
             pixelSize = 6;
             colors = desktopColors;
@@ -98,18 +98,20 @@
 
     function seedMobilePixels() {
         if (!isMobileLayout || width === 0 || height === 0 || pixels.length) return;
-        for (let i = 0; i < 4; i++) {
+        for (let i = 0; i < 10; i++) {
             pixels.push(createMobilePixel(rand(0, width), rand(0, height)));
         }
     }
 
     function createMobilePixel(x, y) {
-        const maxLife = randInt(170, 260);
+        const maxLife = randInt(70, 130);
         return {
             x: align(x),
             y: align(y),
+            vx: rand(-0.18, 0.18),
+            vy: rand(-0.18, 0.18),
             color: choice(colors),
-            size: choice([pixelSize * 0.75, pixelSize]),
+            size: choice([pixelSize * 2, pixelSize * 2.5, pixelSize * 3]),
             life: maxLife,
             maxLife
         };
@@ -155,15 +157,6 @@
         }
     }
 
-    function drawMobilePoint(x, y, size, color, opacity) {
-        const px = align(x);
-        const py = align(y);
-        if (px < 0 || px > width || py < 0 || py > height) return;
-
-        ctx.fillStyle = `rgba(${color.r}, ${color.g}, ${color.b}, ${opacity})`;
-        ctx.fillRect(px, py, size, size);
-    }
-
     function spawnPixels(now) {
         if (now - lastSpawnTime < spawnInterval) return;
         lastSpawnTime = now;
@@ -185,13 +178,14 @@
 
         for (let i = pixels.length - 1; i >= 0; i--) {
             const pixel = pixels[i];
-            const opacityMax = isMobileLayout ? 0.14 : 1;
+            const opacityMax = isMobileLayout ? 0.48 : 1;
             const opacity = Math.max(0, Math.min(opacityMax, (pixel.life / pixel.maxLife) * opacityMax));
 
+            drawRisoPoint(pixel.x, pixel.y, pixel.size, pixel.color, opacity);
+
             if (isMobileLayout) {
-                drawMobilePoint(pixel.x, pixel.y, pixel.size, pixel.color, opacity);
-            } else {
-                drawRisoPoint(pixel.x, pixel.y, pixel.size, pixel.color, opacity);
+                pixel.x += pixel.vx;
+                pixel.y += pixel.vy;
             }
 
             pixel.life--;
