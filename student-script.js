@@ -1040,6 +1040,7 @@ if (studentProjectContent[currentStudent.name]) {
                 const images = contentDiv.querySelectorAll('img');
                 images.forEach(img => {
                     img.setAttribute('loading', 'lazy');
+                    img.setAttribute('decoding', 'async');
                 });
                 contentDiv.querySelectorAll('video').forEach(playVideoWhenVisible);
             }

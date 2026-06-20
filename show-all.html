@@ -233,6 +233,9 @@
                 play();
             }
         }
+        function optimizedGallerySrc(src) {
+            return /\.(png|jpe?g)$/i.test(src) ? `optimized/${src}` : src;
+        }
 
         shuffledImages.forEach((imgSrc, index) => {
             const item = document.createElement('div');
@@ -248,7 +251,7 @@
             item.style.animationDelay = `${Math.min(index * 0.02, 2)}s`;
 
             const media = document.createElement(imgSrc.endsWith('.mp4') ? 'video' : 'img');
-            media.src = imgSrc;
+            media.src = optimizedGallerySrc(imgSrc);
             if (media.tagName === 'VIDEO') {
                 media.autoplay = true;
                 media.muted = true;
@@ -260,6 +263,9 @@
                 media.setAttribute('aria-label', 'Show All');
             } else {
                 media.alt = 'Show All';
+                media.loading = index < 10 ? 'eager' : 'lazy';
+                media.decoding = 'async';
+                if ('fetchPriority' in media) media.fetchPriority = index < 6 ? 'high' : 'low';
             }
 
             // Extract and add student name

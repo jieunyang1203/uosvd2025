@@ -65,6 +65,9 @@
             const m = file.match(/[\uAC00-\uD7A3]+/);
             return m ? studentOrder.indexOf(m[0]) : -1;
         }
+        function optimizedGallerySrc(src) {
+            return /\.(png|jpe?g)$/i.test(src) ? `optimized/${src}` : src;
+        }
 
         shuffledImages.forEach((item, index) => {
             const div = document.createElement('div');
@@ -74,8 +77,11 @@
             div.style.animationDelay = `${index * 0.1}s`;
 
             const img = document.createElement('img');
-            img.src = item.src;
+            img.src = optimizedGallerySrc(item.src);
             img.alt = 'Generative System';
+            img.loading = index < 6 ? 'eager' : 'lazy';
+            img.decoding = 'async';
+            if ('fetchPriority' in img) img.fetchPriority = index < 4 ? 'high' : 'low';
 
             const nameSpan = document.createElement('span');
             nameSpan.className = 'student-name';

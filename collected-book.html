@@ -64,6 +64,9 @@
             const m = file.match(/[\uAC00-\uD7A3]+/);
             return m ? studentOrder.indexOf(m[0]) : -1;
         }
+        function optimizedGallerySrc(src) {
+            return /\.(png|jpe?g)$/i.test(src) ? `optimized/${src}` : src;
+        }
         function playVideoWhenVisible(video) {
             let isVisible = false;
             const play = () => {
@@ -94,7 +97,7 @@
             div.style.animationDelay = `${index * 0.1}s`;
 
             const media = document.createElement(item.src.endsWith('.mp4') ? 'video' : 'img');
-            media.src = item.src;
+            media.src = optimizedGallerySrc(item.src);
             if (media.tagName === 'VIDEO') {
                 media.autoplay = true;
                 media.muted = true;
@@ -106,6 +109,9 @@
                 media.setAttribute('aria-label', 'Collected Book');
             } else {
                 media.alt = 'Collected Book';
+                media.loading = index < 6 ? 'eager' : 'lazy';
+                media.decoding = 'async';
+                if ('fetchPriority' in media) media.fetchPriority = index < 4 ? 'high' : 'low';
             }
 
             const nameSpan = document.createElement('span');

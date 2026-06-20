@@ -2,6 +2,12 @@
 const hoverColors = ['color-pink', 'color-orange', 'color-sky', 'color-green'];
 const mobileLandingQuery = window.matchMedia('(max-width: 768px)');
 
+function optimizedImageSrc(src) {
+    return /^(self|map|shape|collected|generative)\/.+\.(png|jpe?g)$/i.test(src)
+        ? `optimized/${src}`
+        : src;
+}
+
 // Representative Show All image per student (shown in the left panel on hover)
 const studentImages = {
     '강민석': 'self/강민석self.png',
@@ -61,7 +67,7 @@ if (!mobileLandingQuery.matches) {
             const name = nameEl ? nameEl.textContent.trim() : '';
             const src = studentImages[name];
             if (previewEl && src) {
-                previewEl.src = encodeURI(src);
+                previewEl.src = encodeURI(optimizedImageSrc(src));
                 previewEl.style.display = 'block';
             }
         });
@@ -418,7 +424,7 @@ if (!mobileLandingQuery.matches) {
         item.className = 'mobile-student-item';
 
         const media = document.createElement(imgPath.endsWith('.mp4') ? 'video' : 'img');
-        media.src = imgPath;
+        media.src = optimizedImageSrc(imgPath);
         if (media.tagName === 'VIDEO') {
             media.autoplay = true;
             media.muted = true;
