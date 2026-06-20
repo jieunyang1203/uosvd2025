@@ -1028,6 +1028,10 @@ function playVideoWhenVisible(video) {
     }
 }
 
+function withOptimizedStudentImages(html) {
+    return html.replace(/src="(students\/[^"]+\.(?:png|jpe?g))"/gi, 'src="optimized/$1"');
+}
+
 if (studentProjectContent[currentStudent.name]) {
     const contentData = studentProjectContent[currentStudent.name];
     Object.keys(contentData).forEach(projectId => {
@@ -1035,7 +1039,7 @@ if (studentProjectContent[currentStudent.name]) {
         if (section) {
             const contentDiv = section.querySelector('.project-content');
             if (contentDiv) {
-                contentDiv.innerHTML = contentData[projectId];
+                contentDiv.innerHTML = withOptimizedStudentImages(contentData[projectId]);
                 // Add loading="lazy" to all images
                 const images = contentDiv.querySelectorAll('img');
                 images.forEach(img => {
