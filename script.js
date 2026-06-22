@@ -3,7 +3,7 @@ const hoverColors = ['color-pink', 'color-orange', 'color-sky', 'color-green'];
 const mobileLandingQuery = window.matchMedia('(max-width: 768px)');
 
 function optimizedImageSrc(src) {
-    return /^(self|map|shape|collected|generative)\/.+\.(png|jpe?g)$/i.test(src)
+    return /^(self|map|shape|collected|generative|students)\/.+\.(png|jpe?g)$/i.test(src)
         ? `optimized/${src}`
         : src;
 }
