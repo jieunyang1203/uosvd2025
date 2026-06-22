@@ -31,7 +31,7 @@ const studentImages = {
     '임채영': 'self/임채영self.png',
     '장민지': 'self/장민지self.png',
     '장혜원': 'self/장혜원self.png',
-    '전소영': 'students/전소영/Collectedbook_1_전소영.jpg',
+    '전소영': 'self/전소영self.jpg',
     '최문형': 'self/최문형self.png',
     '한서원': 'self/한서원self.png'
 };
