@@ -15,6 +15,9 @@
 :root {
     --s: 1;
     --pile-s: 0.85;
+    /* Below this window width the desktop layout stops shrinking and gets
+       cropped instead. Keep in sync with LOCK_WIDTH in script.js. */
+    --lock-w: 1600px;
 }
 
 * {
@@ -32,12 +35,14 @@ body {
     position: relative;
 }
 
-/* Responsive design canvas: elements scale down on narrower desktop windows
-   so the right-side pile stays inside the viewport and clear of the divider. */
+/* Desktop design canvas. Elements scale down with the window only until it
+   reaches --lock-w; below that the layout freezes at the lock width and the
+   window simply crops it (showing part of the page), instead of shrinking
+   everything further. At <=768px the mobile media query takes over. */
 .stage {
     position: relative;
     width: 100vw;
-    max-width: 100%;
+    min-width: var(--lock-w);
     height: 100vh;
     min-height: 760px;
     overflow: hidden;
@@ -78,30 +83,39 @@ body {
 }
 
 /* ===== Header (top-left): logo + brand ===== */
-.logo-mark {
+/* Logo and brand are grouped so the brand always sits right after the logo and
+   shrinks together with it, keeping the whole header inside the left pane
+   (left of the divider) at any window width. */
+.header {
     position: absolute;
     left: 36px;
     top: 28px;
+    display: flex;
+    align-items: flex-start;
+    gap: 17px;
+    z-index: 30;
+}
+
+.logo-mark {
+    flex-shrink: 0;
     width: calc(195px * var(--s));
     aspect-ratio: 2 / 1;
     background-image: url('logo.svg');
     background-size: contain;
     background-position: left top;
     background-repeat: no-repeat;
-    z-index: 20;
     pointer-events: none;
 }
 
 .brand {
-    position: absolute;
-    top: 40px;
-    left: 248px;
+    flex-shrink: 0;
+    margin-top: 12px;
     font-family: 'MaxiSharp', monospace;
     font-size: calc(16px * var(--s));
     line-height: 1.35;
     color: #000000;
     letter-spacing: 0.5px;
-    z-index: 30;
+    white-space: nowrap;
 }
 
 /* ===== Top Menu (right panel, sits along the top) ===== */
@@ -128,9 +142,21 @@ body {
     pointer-events: none;
 }
 
-.menu-item {
+/* Menu items laid out in a flex row so the gaps between them are equal
+   regardless of each item's text width. The row spans the same extent as
+   before (first item flush-left at 39.5%, last item flush-right), so the
+   total width the menu occupies is unchanged. */
+.menu-items {
     position: absolute;
     top: 38px;
+    left: 41.5%;
+    right: 4%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.menu-item {
     cursor: pointer;
     pointer-events: auto;
     font-family: 'MaxiSharp', monospace;
@@ -144,13 +170,6 @@ body {
     box-decoration-break: clone;
     padding: 2px 7px;
 }
-
-.m-showall   { left: 39.5%; }
-.m-generative{ left: 49.3%; }
-.m-shape     { left: 59.1%; }
-.m-self      { left: 68.9%; }
-.m-collected { left: 78.7%; }
-.m-map       { left: 88.5%; }
 
 .m-showall   .hl { background-color: #FF16FC; }
 .m-generative .hl { background-color: #FFA301; }
@@ -179,6 +198,7 @@ body {
     position: absolute;
     left: 40px;
     bottom: 36px;
+    white-space: nowrap;
     font-family: 'Pretendard', sans-serif;
     font-size: calc(15px * var(--s));
     line-height: 1.55;

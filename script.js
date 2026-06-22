@@ -146,7 +146,11 @@ function setResponsiveScale() {
         return;
     }
 
-    const w = window.innerWidth;
+    // Freeze the layout below the lock width: clamp the width used for scaling
+    // so elements stop shrinking and the window just crops the page instead.
+    // Keep LOCK_WIDTH in sync with --lock-w in style.css.
+    const LOCK_WIDTH = 1600;
+    const w = Math.max(window.innerWidth, LOCK_WIDTH);
     const h = window.innerHeight;
     const s = Math.min(1, Math.max(0.5, w / 1500));
     const rightPanelWidth = w * 0.735;
